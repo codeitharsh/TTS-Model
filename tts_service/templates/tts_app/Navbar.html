@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar with Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <header class="bg-white shadow-sm">
+    <div class="container mx-auto flex min-h-16 items-center justify-between gap-x-20 relative px-4">
+      <!-- Logo Area -->
+      <div class="z-10 flex items-center">
+        <a class="inline-flex justify-center items-center rounded-sm hover:text-gray-700 group-hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" href="/">
+          <div class="flex max-w-[121px] items-center">
+            <!-- Logo goes here -->
+            <span class="font-bold text-lg">Logo</span>
+          </div>
+        </a>
+        <a href="#content" class="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-black text-white focus:outline-none focus:ring-2 w-fit h-10 px-4 absolute left-[-99999px] top-5 z-[99999] focus-visible:left-5">
+          Skip to content
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main" class="z-[1] absolute left-1/2 -translate-x-1/2 items-center justify-center hidden lg:flex">
+        <div class="relative">
+          <ul class="flex-1 list-none justify-center flex items-center">
+            <!-- AI Audio Dropdown -->
+            <li class="inline-flex h-10 shrink-0 items-center px-2.5">
+              <button id="ai-audio-dropdown" aria-expanded="false" class="inline-flex items-center hover:text-gray-700 rounded-sm py-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                AI Audio
+                <div class="h-4 w-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" class="transition-transform duration-300 ease-in-out">
+                    <path stroke="currentColor" stroke-width="1.5" d="m4 6 4 4 4-4"></path>
+                  </svg>
+                </div>
+              </button>
+            </li>
+            
+            <!-- Solutions Dropdown -->
+            <li class="inline-flex h-10 shrink-0 items-center px-2.5">
+              <button id="solutions-dropdown" aria-expanded="false" class="inline-flex items-center hover:text-gray-700 rounded-sm py-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                Solutions
+                <div class="h-4 w-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" class="transition-transform duration-300 ease-in-out">
+                    <path stroke="currentColor" stroke-width="1.5" d="m4 6 4 4 4-4"></path>
+                  </svg>
+                </div>
+              </button>
+            </li>
+            
+            <!-- Docs Link -->
+            <li class="inline-flex h-10 items-center px-2.5">
+              <a class="inline-flex justify-center items-center rounded-sm hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" href="/docs">Docs</a>
+            </li>
+            
+            <!-- Pricing Link -->
+            <li class="inline-flex h-10 items-center px-2.5">
+              <a class="inline-flex justify-center items-center rounded-sm hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" href="/pricing">Pricing</a>
+            </li>
+            
+            <!-- Enterprise Link -->
+            <li class="inline-flex h-10 items-center px-2.5">
+              <a class="inline-flex justify-center items-center rounded-sm hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500" href="/enterprise">Enterprise</a>
+            </li>
+            
+            <!-- Company Dropdown -->
+            <li class="inline-flex h-10 shrink-0 items-center px-2.5">
+              <button id="company-dropdown" aria-expanded="false" class="inline-flex items-center hover:text-gray-700 rounded-sm py-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                Company
+                <div class="h-4 w-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" class="transition-transform duration-300 ease-in-out">
+                    <path stroke="currentColor" stroke-width="1.5" d="m4 6 4 4 4-4"></path>
+                  </svg>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <!-- Dropdown Content Container -->
+        <div class="absolute top-full flex justify-center"></div>
+      </nav>
+      
+      <!-- Right Side - Auth Buttons -->
+      <div class="z-10 flex items-center gap-x-2">
+        <div class="flex items-center gap-x-2">
+          <a href="/app/sign-in" class="items-center justify-center whitespace-nowrap rounded-full bg-gray-800 text-white w-fit h-6 px-3 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 hidden lg:inline-flex">
+            Log in
+          </a>
+          <a href="/app/sign-up" class="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-black text-white w-fit h-6 px-3 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+            Try for free
+          </a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-transparent text-gray-800 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 w-10 h-10 relative lg:hidden -mr-2" aria-label="Open menu" type="button" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+            <path stroke="currentColor" stroke-width="1.5" d="M2 6h20M2 12h20M2 18h20"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Page Content -->
+  <main id="content" class="container mx-auto mt-8 px-4">
+    <h1 class="text-2xl font-bold">Page Content</h1>
+    <p class="mt-4">This is where your page content would go.</p>
+  </main>
+
+  <script>
+    // Basic dropdown toggle functionality
+    document.querySelectorAll('button[id$="-dropdown"]').forEach(button => {
+      button.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        // In a real implementation, you would toggle the visibility of the dropdown content here
+      });
+    });
+  </script>
+</body>
+</html>

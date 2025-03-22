@@ -1,0 +1,2079 @@
+
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <meta name="description" content="Transform text into natural-sounding speech with our advanced text-to-speech converter. Customize voice, language, speed, pitch, and more. Download as MP3 or share instantly.">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="">
+
+      
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
+      <title>Advanced Text-to-Speech Converter | Convert Text to Natural Speech</title>
+      <!-- SEO Description -->
+      <meta name="description" content="Transform text into natural-sounding speech with our advanced text-to-speech converter. Customize voice, language, speed, pitch, and more. Download as MP3 or share instantly.">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      
+      <!-- Header Scripts -->
+      <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+          document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+      </script>
+
+      <!-- Preconnect -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <!-- Font stylesheet -->
+
+      <style>
+        :root {
+          color-scheme: light;
+        }
+      </style>
+
+      <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+      // render the settings object
+      //console.log('settings', [object Object]);
+      document.addEventListener('DOMContentLoaded', function() {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  DEFAULT: '#007BFF',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8', 
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  DEFAULT: '#6C757D',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3', 
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  DEFAULT: '',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3', 
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Poppins, Arial, sans-serif', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Inter, Arial, sans-serif', 'Inter', 'system-ui', 'sans-serif'],
+                body: ['Inter, Arial, sans-serif', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      });
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="robots" content="">
+      <meta name="google-site-verification" content="">
+      <meta name="baidu-verification" content="">
+      <meta name="yandex-verification" content="">
+      <meta name="bing-verification" content="">
+      <meta property="og:title" content="">
+      <meta property="og:description" content="">
+      <meta property="og:image" content="">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="Text-to-Speech Converter">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="">
+      <meta name="twitter:description" content="">
+      <meta name="twitter:image" content="">
+    
+      
+      <!-- Font Links -->
+     
+      <link rel="icon" type="image/x-icon" href="">
+
+      <style>
+        h1, h2, h3, h4, h5, h6 {
+          font-family: Poppins, Arial, sans-serif, Inter, system-ui, sans-serif;
+        }
+        body {
+          font-family: Inter, Arial, sans-serif, Inter, system-ui, sans-serif;
+        }
+      </style>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative h-full">
+        <div id="RolloutPageContent"><element id="3bf1677f-f3ff-493c-9923-9879f6faaef0" data-section-id="3bf1677f-f3ff-493c-9923-9879f6faaef0">
+
+
+<div id="root" class="min-h-screen bg-gray-100 dark:bg-gray-900 font-inter text-gray-800 dark:text-gray-200">
+  <div class="flex">
+    <!-- Sidebar navigation -->
+    <div x-data="{ isOpen: false }" class="relative">
+      <!-- Desktop sidebar -->
+      <nav id="layout" class="hidden lg:flex flex-col w-64 h-screen bg-white dark:bg-gray-800 border-r border-neutral-200/20 dark:border-neutral-700/20 py-6 px-4 sticky top-0 left-0">
+        <div class="flex items-center justify-center mb-8">
+          <h1 class="text-2xl font-bold text-blue-600 dark:text-teal-400">VoiceGen</h1>
+        </div>
+        
+        <div class="space-y-1">
+          <button onclick="showSection('input-section')" class="flex items-center w-full px-4 py-3 text-left rounded-lg bg-blue-50 dark:bg-gray-700 text-blue-700 dark:text-teal-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+            Text Input
+          </button>
+          
+          <button onclick="showSection('voice-section')" class="flex items-center w-full px-4 py-3 text-left rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+            </svg>
+            Voice Selection
+          </button>
+          
+          <button onclick="showSection('tts-controls')" class="flex items-center w-full px-4 py-3 text-left rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            </svg>
+            TTS Controls
+          </button>
+          
+          <button onclick="showSection('output-section')" class="flex items-center w-full px-4 py-3 text-left rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+            </svg>
+            Output
+          </button>
+          
+          <button onclick="showSection('visualization')" class="flex items-center w-full px-4 py-3 text-left rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            Visualization
+          </button>
+          
+          <button onclick="showSection('settings')" class="flex items-center w-full px-4 py-3 text-left rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            Settings
+          </button>
+        </div>
+        
+        <div class="mt-auto pt-6 border-t border-neutral-200/20 dark:border-neutral-700/20">
+          <div class="flex items-center px-4 py-2">
+            <div class="relative w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-full w-full text-gray-400 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-medium">User Account</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400">user@example.com</p>
+            </div>
+          </div>
+          <button class="flex items-center w-full px-4 py-2 mt-2 text-left text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            Sign Out
+          </button>
+        </div>
+      </nav>
+      
+      <!-- Mobile menu button -->
+      <div class="lg:hidden absolute top-4 left-4 z-20">
+        <button type="button" @click="isOpen = !isOpen" aria-controls="mobile-menu" :aria-expanded="isOpen" class="p-2 rounded-md text-neutral-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <span class="sr-only">Open main menu</span>
+          <svg x-cloak x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg x-cloak x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile menu -->
+      <div id="mobile-menu" x-cloak x-show="isOpen" @click.away="isOpen = false" @resize.window="if (window.innerWidth > 1024) isOpen = false" 
+           class="lg:hidden fixed inset-0 z-10 bg-neutral-800/80 backdrop-blur-lg"
+           x-transition:enter="transition ease-out duration-100 transform"
+           x-transition:enter-start="opacity-0 scale-95"
+           x-transition:enter-end="opacity-100 scale-100"
+           x-transition:leave="transition ease-in duration-75 transform"
+           x-transition:leave-start="opacity-100 scale-100"
+           x-transition:leave-end="opacity-0 scale-95">
+        <div class="px-4 pt-16 pb-6 h-screen overflow-y-auto">
+          <div class="flex items-center justify-center mb-8">
+            <h1 class="text-2xl font-bold text-teal-400">VoiceGen</h1>
+          </div>
+          
+          <div class="space-y-1">
+            <button onclick="showSection('input-section'); isOpen = false" class="flex items-center w-full px-4 py-3 text-left rounded-lg bg-gray-700 text-teal-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+              Text Input
+            </button>
+            
+            <button onclick="showSection('voice-section'); isOpen = false" class="flex items-center w-full px-4 py-3 text-left rounded-lg hover:bg-gray-700 transition-colors duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+              </svg>
+              Voice Selection
+            </button>
+            
+            <button onclick="showSection('tts-controls'); isOpen = false" class="flex items-center w-full px-4 py-3 text-left rounded-lg hover:bg-gray-700 transition-colors duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+              TTS Controls
+            </button>
+            
+            <button onclick="showSection('output-section'); isOpen = false" class="flex items-center w-full px-4 py-3 text-left rounded-lg hover:bg-gray-700 transition-colors duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              </svg>
+              Output
+            </button>
+            
+            <button onclick="showSection('visualization'); isOpen = false" class="flex items-center w-full px-4 py-3 text-left rounded-lg hover:bg-gray-700 transition-colors duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              Visualization
+            </button>
+            
+            <button onclick="showSection('settings'); isOpen = false" class="flex items-center w-full px-4 py-3 text-left rounded-lg hover:bg-gray-700 transition-colors duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Settings
+            </button>
+          </div>
+          
+          <div class="mt-auto pt-6 border-t border-neutral-700/20">
+            <div class="flex items-center px-4 py-2">
+              <div class="relative w-8 h-8 rounded-full bg-gray-700 overflow-hidden mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-full w-full text-gray-400 p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium">User Account</p>
+                <p class="text-xs text-gray-400">user@example.com</p>
+              </div>
+            </div>
+            <button class="flex items-center w-full px-4 py-2 mt-2 text-left text-sm text-red-400 hover:bg-red-900/20 rounded-lg transition-colors duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+              Sign Out
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main content area -->
+    <main class="flex-1 overflow-y-auto">
+      <!-- Theme toggle -->
+      <div class="fixed top-4 right-4 z-20">
+        <button id="theme-toggle" class="p-2 rounded-lg bg-white dark:bg-gray-800 border border-neutral-200/30 dark:border-neutral-700/30 shadow-sm">
+          <!-- Sun icon (for dark mode) -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <!-- Moon icon (for light mode) -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- "Skip to main content" link for accessibility -->
+      <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-blue-600 focus:text-white focus:z-50">
+        Skip to main content
+      </a>
+      
+      <MountPoint>
+
+      <script>
+        // Dark mode toggle functionality
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+          document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        });
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        
+        // Default to first section on load
+        document.addEventListener('DOMContentLoaded', function() {
+          showSection('input-section');
+        });
+      </script>
+
+</element><element id="fe4fc61f-ec2d-4e0d-8664-9c080b90ea66" data-section-id="fe4fc61f-ec2d-4e0d-8664-9c080b90ea66">
+
+
+<div id="input-section" class="page-section h-screen p-6 lg:px-8 flex flex-col overflow-y-auto">
+  <div class="mb-6">
+    <h2 class="text-2xl font-bold text-gray-800 dark:text-white font-poppins">Text Input</h2>
+    <p class="mt-2 text-gray-600 dark:text-gray-300 font-inter">Enter your text below to convert into natural-sounding speech.</p>
+  </div>
+
+  <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4 mb-6 flex-grow flex flex-col">
+    <div class="flex items-center justify-between mb-3">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins">Input Text</h3>
+      <div class="flex space-x-2">
+        <button class="text-sm text-blue-600 dark:text-teal-400 hover:text-blue-700 dark:hover:text-teal-300 transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+          </svg>
+          Upload File
+        </button>
+        <button class="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          </svg>
+          Clear
+        </button>
+      </div>
+    </div>
+
+    <div class="relative flex-grow">
+      <textarea id="textInput" class="w-full h-full min-h-[200px] p-4 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 focus:border-blue-500 dark:focus:border-teal-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 focus:outline-none transition-colors duration-200 font-inter resize-none" placeholder="Enter text to convert into speech..."></textarea>
+      
+      <div class="absolute bottom-3 right-3 text-xs text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-700 px-2 py-1 rounded">
+        <span id="charCount">0</span> characters / <span id="wordCount">0</span> words
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 font-poppins">Pronunciation Adjustments</h3>
+      <div class="space-y-3">
+        <div class="flex justify-between items-center">
+          <label for="pronunciation" class="text-sm text-gray-600 dark:text-gray-400 font-inter">Custom Pronunciations</label>
+          <button class="text-xs text-blue-600 dark:text-teal-400 hover:text-blue-700 dark:hover:text-teal-300 transition-colors duration-200">
+            Add New
+          </button>
+        </div>
+        <div class="flex items-center border border-gray-200 dark:border-gray-600 rounded-lg overflow-hidden">
+          <input type="text" id="pronunciation" placeholder="Original word" class="flex-1 p-2 text-sm bg-gray-50 dark:bg-gray-700 border-none focus:ring-0 focus:outline-none font-inter" />
+          <span class="px-2 text-gray-400">=</span>
+          <input type="text" placeholder="Pronunciation" class="flex-1 p-2 text-sm bg-gray-50 dark:bg-gray-700 border-none focus:ring-0 focus:outline-none font-inter" />
+          <button class="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 font-poppins">Auto-save & Preferences</h3>
+      <div class="space-y-3">
+        <div class="flex items-center">
+          <input type="checkbox" id="autosave" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" checked />
+          <label for="autosave" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">Auto-save text input</label>
+        </div>
+        <div class="flex items-center">
+          <input type="checkbox" id="pasteFormatting" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" />
+          <label for="pasteFormatting" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">Preserve formatting when pasting</label>
+        </div>
+        <div class="flex items-center">
+          <input type="checkbox" id="autoDetectLang" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" checked />
+          <label for="autoDetectLang" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">Automatically detect language</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-end space-x-3">
+    <button class="px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">
+      Reset
+    </button>
+    <button class="px-4 py-2 text-white bg-blue-600 dark:bg-teal-500 hover:bg-blue-700 dark:hover:bg-teal-600 rounded-lg transition-colors duration-200 font-inter">
+      Continue to Voice Selection
+    </button>
+  </div>
+
+  <script>
+    // Character and word counter functionality
+    const textInput = document.getElementById('textInput');
+    const charCount = document.getElementById('charCount');
+    const wordCount = document.getElementById('wordCount');
+
+    textInput.addEventListener('input', function() {
+      // Update character count
+      charCount.textContent = this.value.length;
+      
+      // Update word count
+      const words = this.value.trim().split(/\s+/);
+      wordCount.textContent = this.value.trim() === '' ? 0 : words.length;
+      
+      // Auto-save functionality
+      if (document.getElementById('autosave').checked) {
+        localStorage.setItem('savedText', this.value);
+      }
+    });
+
+    // Load saved text on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedText = localStorage.getItem('savedText');
+      if (savedText) {
+        textInput.value = savedText;
+        // Trigger input event to update character and word count
+        const event = new Event('input');
+        textInput.dispatchEvent(event);
+      }
+    });
+  </script>
+</div>
+
+</element><element id="c3903255-994d-4fe4-8bc0-d1665bd8779f" data-section-id="c3903255-994d-4fe4-8bc0-d1665bd8779f">
+
+
+<div id="voice-section" class="page-section h-screen p-6 lg:px-8 flex flex-col overflow-y-auto hidden">
+  <div class="mb-6">
+    <h2 class="text-2xl font-bold text-gray-800 dark:text-white font-poppins">Voice Selection</h2>
+    <p class="mt-2 text-gray-600 dark:text-gray-300 font-inter">Choose from our library of natural-sounding voices or customize your own.</p>
+  </div>
+
+  <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4 mb-6">
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-3 md:mb-0">Voice Library</h3>
+      <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+        <div class="relative">
+          <input type="text" placeholder="Search voices..." class="w-full pl-10 pr-4 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 focus:outline-none transition-colors duration-200 font-inter" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <div class="flex items-center space-x-2">
+          <select class="text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-2 focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter appearance-none">
+            <option>All Languages</option>
+            <option>English</option>
+            <option>Spanish</option>
+            <option>French</option>
+            <option>German</option>
+            <option>Japanese</option>
+          </select>
+          <select class="text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-2 focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter appearance-none">
+            <option>All Genders</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Neutral</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+      <!-- Voice Option 1 -->
+      <div class="group border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-teal-500 rounded-lg p-4 transition-all duration-200 cursor-pointer bg-white dark:bg-gray-800 hover:shadow-sm">
+        <div class="flex items-center mb-3">
+          <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-teal-900 flex items-center justify-center text-blue-600 dark:text-teal-400 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-medium text-gray-800 dark:text-white font-poppins">Emma (US)</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 font-inter">English - Female - Natural</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-teal-900 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-teal-400 transition-colors duration-200 mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </button>
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-inter">Preview</span>
+          </div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 font-inter">
+            <span class="px-2 py-1 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400">Popular</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voice Option 2 -->
+      <div class="group border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-teal-500 rounded-lg p-4 transition-all duration-200 cursor-pointer bg-white dark:bg-gray-800 hover:shadow-sm">
+        <div class="flex items-center mb-3">
+          <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-teal-900 flex items-center justify-center text-blue-600 dark:text-teal-400 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-medium text-gray-800 dark:text-white font-poppins">James (UK)</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 font-inter">English - Male - Professional</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-teal-900 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-teal-400 transition-colors duration-200 mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </button>
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-inter">Preview</span>
+          </div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 font-inter">
+            <span class="px-2 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400">New</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voice Option 3 -->
+      <div class="group border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-teal-500 rounded-lg p-4 transition-all duration-200 cursor-pointer bg-white dark:bg-gray-800 hover:shadow-sm">
+        <div class="flex items-center mb-3">
+          <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-teal-900 flex items-center justify-center text-blue-600 dark:text-teal-400 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-medium text-gray-800 dark:text-white font-poppins">Sofia (ES)</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 font-inter">Spanish - Female - Casual</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-teal-900 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-teal-400 transition-colors duration-200 mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </button>
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-inter">Preview</span>
+          </div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 font-inter">
+            <span class="px-2 py-1 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400">Enhanced</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voice Option 4 -->
+      <div class="group border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-teal-500 rounded-lg p-4 transition-all duration-200 cursor-pointer bg-white dark:bg-gray-800 hover:shadow-sm">
+        <div class="flex items-center mb-3">
+          <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-teal-900 flex items-center justify-center text-blue-600 dark:text-teal-400 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-medium text-gray-800 dark:text-white font-poppins">Alex (US)</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 font-inter">English - Neutral - AI</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-teal-900 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-teal-400 transition-colors duration-200 mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </button>
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-inter">Preview</span>
+          </div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 font-inter">
+            <span class="px-2 py-1 rounded-full bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-400">AI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voice Option 5 -->
+      <div class="group border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-teal-500 rounded-lg p-4 transition-all duration-200 cursor-pointer bg-white dark:bg-gray-800 hover:shadow-sm">
+        <div class="flex items-center mb-3">
+          <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-teal-900 flex items-center justify-center text-blue-600 dark:text-teal-400 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-medium text-gray-800 dark:text-white font-poppins">Pierre (FR)</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 font-inter">French - Male - Natural</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-teal-900 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-teal-400 transition-colors duration-200 mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </button>
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-inter">Preview</span>
+          </div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 font-inter">
+            <span class="px-2 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400">Standard</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voice Option 6 -->
+      <div class="group border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-teal-500 rounded-lg p-4 transition-all duration-200 cursor-pointer bg-white dark:bg-gray-800 hover:shadow-sm">
+        <div class="flex items-center mb-3">
+          <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-teal-900 flex items-center justify-center text-blue-600 dark:text-teal-400 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-sm font-medium text-gray-800 dark:text-white font-poppins">Akira (JP)</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 font-inter">Japanese - Male - Natural</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <button class="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-teal-900 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-teal-400 transition-colors duration-200 mr-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </button>
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-inter">Preview</span>
+          </div>
+          <div class="text-xs text-gray-500 dark:text-gray-400 font-inter">
+            <span class="px-2 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400">New</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button class="text-sm text-blue-600 dark:text-teal-400 hover:text-blue-700 dark:hover:text-teal-300 transition-colors duration-200 font-inter">
+        View More Voices (24)
+      </button>
+    </div>
+  </div>
+
+  <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4 mb-6">
+    <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-4">Selected Voice: Emma (US)</h3>
+    
+    <div class="flex flex-col md:flex-row gap-4">
+      <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 flex-1">
+        <h4 class="text-xs font-medium text-gray-600 dark:text-gray-400 mb-3 font-poppins">Voice Preview</h4>
+        <div class="flex items-center">
+          <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-teal-900 flex items-center justify-center text-blue-600 dark:text-teal-400 mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+            </svg>
+          </div>
+          <div class="flex-1">
+            <input type="text" placeholder="Enter a phrase to preview voice" class="w-full px-3 py-2 text-sm bg-white dark:bg-gray-600 border border-gray-200 dark:border-gray-500 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 focus:outline-none transition-colors duration-200 font-inter" value="This is a preview of my voice." />
+          </div>
+          <button class="ml-2 p-2 rounded-full bg-blue-600 dark:bg-teal-500 hover:bg-blue-700 dark:hover:bg-teal-600 text-white transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 flex-1">
+        <h4 class="text-xs font-medium text-gray-600 dark:text-gray-400 mb-3 font-poppins">Custom Voice Upload</h4>
+        <div class="flex items-center justify-center h-full border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4">
+          <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-8 w-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+            </svg>
+            <p class="mt-2 text-xs text-gray-500 dark:text-gray-400 font-inter">Upload your custom voice model or sample</p>
+            <button class="mt-3 px-3 py-1 text-xs text-blue-600 dark:text-teal-400 border border-blue-600 dark:border-teal-400 rounded-lg hover:bg-blue-50 dark:hover:bg-teal-900/20 transition-colors duration-200 font-inter">
+              Upload File
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-between">
+    <button onclick="showSection('input-section')" class="px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">
+      Back to Text Input
+    </button>
+    <button onclick="showSection('tts-controls')" class="px-4 py-2 text-white bg-blue-600 dark:bg-teal-500 hover:bg-blue-700 dark:hover:bg-teal-600 rounded-lg transition-colors duration-200 font-inter">
+      Continue to TTS Controls
+    </button>
+  </div>
+
+  <script>
+    // Voice preview functionality would go here
+    // This is just a placeholder to show how the preview button would work
+    document.addEventListener('DOMContentLoaded', function() {
+      const previewButtons = document.querySelectorAll('.voice-section button');
+      previewButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Placeholder for audio preview functionality
+          console.log('Playing voice preview');
+          // In a real implementation, this would play an audio sample
+        });
+      });
+    });
+  </script>
+</div>
+
+</element><element id="5315b6f9-fa03-43da-8eab-b5d1e51ced01" data-section-id="5315b6f9-fa03-43da-8eab-b5d1e51ced01">
+
+
+<div id="tts-controls" class="page-section h-screen p-6 lg:px-8 flex flex-col overflow-y-auto hidden">
+  <div class="mb-6">
+    <h2 class="text-2xl font-bold text-gray-800 dark:text-white font-poppins">TTS Controls</h2>
+    <p class="mt-2 text-gray-600 dark:text-gray-300 font-inter">Fine-tune your speech output with these advanced controls.</p>
+  </div>
+
+  <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-6 mb-6">
+    <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-6">Playback Settings</h3>
+    
+    <!-- Speed Control -->
+    <div class="mb-8">
+      <div class="flex justify-between items-center mb-2">
+        <label for="speed-slider" class="text-sm text-gray-600 dark:text-gray-400 font-inter">Speech Speed</label>
+        <span id="speed-value" class="text-sm font-medium text-blue-600 dark:text-teal-400 font-inter">1.0x</span>
+      </div>
+      <div class="relative">
+        <input 
+          id="speed-slider" 
+          type="range" 
+          min="0.5" 
+          max="2" 
+          step="0.1" 
+          value="1" 
+          class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
+        >
+        <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1 px-1 font-inter">
+          <span>0.5x</span>
+          <span>1.0x</span>
+          <span>1.5x</span>
+          <span>2.0x</span>
+        </div>
+      </div>
+      <p class="mt-2 text-xs text-gray-500 dark:text-gray-400 font-inter">Adjust the speaking rate from slow to fast.</p>
+    </div>
+    
+    <!-- Pitch Control -->
+    <div class="mb-8">
+      <div class="flex justify-between items-center mb-2">
+        <label for="pitch-slider" class="text-sm text-gray-600 dark:text-gray-400 font-inter">Voice Pitch</label>
+        <span id="pitch-value" class="text-sm font-medium text-blue-600 dark:text-teal-400 font-inter">Medium</span>
+      </div>
+      <div class="relative">
+        <input 
+          id="pitch-slider" 
+          type="range" 
+          min="0" 
+          max="2" 
+          step="0.1" 
+          value="1" 
+          class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
+        >
+        <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1 px-1 font-inter">
+          <span>Low</span>
+          <span>Medium</span>
+          <span>High</span>
+        </div>
+      </div>
+      <p class="mt-2 text-xs text-gray-500 dark:text-gray-400 font-inter">Change the tone from deeper to higher pitch.</p>
+    </div>
+    
+    <!-- Volume Control -->
+    <div class="mb-8">
+      <div class="flex justify-between items-center mb-2">
+        <label for="volume-slider" class="text-sm text-gray-600 dark:text-gray-400 font-inter">Volume</label>
+        <span id="volume-value" class="text-sm font-medium text-blue-600 dark:text-teal-400 font-inter">80%</span>
+      </div>
+      <div class="relative">
+        <input 
+          id="volume-slider" 
+          type="range" 
+          min="0" 
+          max="100" 
+          step="1" 
+          value="80" 
+          class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
+        >
+        <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1 px-1 font-inter">
+          <span>Mute</span>
+          <span>50%</span>
+          <span>100%</span>
+        </div>
+      </div>
+      <p class="mt-2 text-xs text-gray-500 dark:text-gray-400 font-inter">Adjust output volume from mute to maximum.</p>
+    </div>
+    
+    <!-- Additional Options -->
+    <div class="space-y-4">
+      <div class="flex items-center">
+        <input 
+          id="natural-pauses" 
+          type="checkbox" 
+          checked 
+          class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500"
+        >
+        <label for="natural-pauses" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+          Natural Pauses
+          <span class="block text-xs text-gray-500 dark:text-gray-400">Adds subtle delays for more natural speech flow</span>
+        </label>
+      </div>
+      
+      <div class="flex items-center">
+        <input 
+          id="emphasize-important" 
+          type="checkbox" 
+          class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500"
+        >
+        <label for="emphasize-important" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+          Emphasize Important Words
+          <span class="block text-xs text-gray-500 dark:text-gray-400">Automatically emphasize words in ALL CAPS or surrounded by *asterisks*</span>
+        </label>
+      </div>
+      
+      <div class="flex items-center">
+        <input 
+          id="enhanced-clarity" 
+          type="checkbox" 
+          class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500"
+        >
+        <label for="enhanced-clarity" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+          Enhanced Clarity
+          <span class="block text-xs text-gray-500 dark:text-gray-400">Applies AI-based audio enhancement for clearer voice (may increase processing time)</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-6 mb-6">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins">Advanced Settings</h3>
+      <button class="text-xs text-blue-600 dark:text-teal-400 hover:text-blue-700 dark:hover:text-teal-300 transition-colors duration-200 font-inter">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+        Custom Preset
+      </button>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <label for="voice-style" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Voice Style</label>
+        <select id="voice-style" class="w-full px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter">
+          <option>Default</option>
+          <option>Conversational</option>
+          <option>Newscast</option>
+          <option>Narration</option>
+          <option>Customer Service</option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="audio-format" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Audio Format</label>
+        <select id="audio-format" class="w-full px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter">
+          <option>MP3 (Recommended)</option>
+          <option>WAV (High Quality)</option>
+          <option>M4A</option>
+          <option>FLAC</option>
+          <option>OGG</option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="sample-rate" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Sample Rate</label>
+        <select id="sample-rate" class="w-full px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter">
+          <option>16kHz (Standard)</option>
+          <option>22kHz</option>
+          <option>24kHz (High Quality)</option>
+          <option>44.1kHz (Studio Quality)</option>
+        </select>
+      </div>
+      
+      <div>
+        <label for="silence-padding" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Silence Padding</label>
+        <select id="silence-padding" class="w-full px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter">
+          <option>None</option>
+          <option>0.5 seconds</option>
+          <option>1 second (Default)</option>
+          <option>1.5 seconds</option>
+          <option>2 seconds</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="mt-6 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+      <button id="presets-default" class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 font-inter">Default</button>
+      <button id="presets-audiobook" class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 font-inter">Audiobook</button>
+      <button id="presets-podcast" class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 font-inter">Podcast</button>
+      <button id="presets-announcement" class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 font-inter">Announcement</button>
+      <button id="presets-video" class="px-3 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 font-inter">Video Narration</button>
+    </div>
+  </div>
+  
+  <div class="flex justify-between">
+    <div>
+      <button onclick="showSection('voice-section')" class="px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">
+        Back to Voice Selection
+      </button>
+      <button id="reset-controls" class="ml-2 px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">
+        Reset All
+      </button>
+    </div>
+    <button onclick="showSection('output-section')" class="px-4 py-2 text-white bg-blue-600 dark:bg-teal-500 hover:bg-blue-700 dark:hover:bg-teal-600 rounded-lg transition-colors duration-200 font-inter">
+      Continue to Output
+    </button>
+  </div>
+
+  <script>
+    // Update slider values in real-time
+    document.addEventListener('DOMContentLoaded', function() {
+      // Speed slider
+      const speedSlider = document.getElementById('speed-slider');
+      const speedValue = document.getElementById('speed-value');
+      speedSlider.addEventListener('input', function() {
+        speedValue.textContent = this.value + 'x';
+      });
+      
+      // Pitch slider
+      const pitchSlider = document.getElementById('pitch-slider');
+      const pitchValue = document.getElementById('pitch-value');
+      pitchSlider.addEventListener('input', function() {
+        let pitchText = 'Medium';
+        if (this.value < 0.5) pitchText = 'Very Low';
+        else if (this.value < 0.8) pitchText = 'Low';
+        else if (this.value < 1.2) pitchText = 'Medium';
+        else if (this.value < 1.5) pitchText = 'High';
+        else pitchText = 'Very High';
+        pitchValue.textContent = pitchText;
+      });
+      
+      // Volume slider
+      const volumeSlider = document.getElementById('volume-slider');
+      const volumeValue = document.getElementById('volume-value');
+      volumeSlider.addEventListener('input', function() {
+        volumeValue.textContent = this.value + '%';
+      });
+      
+      // Reset button
+      document.getElementById('reset-controls').addEventListener('click', function() {
+        speedSlider.value = 1;
+        speedValue.textContent = '1.0x';
+        
+        pitchSlider.value = 1;
+        pitchValue.textContent = 'Medium';
+        
+        volumeSlider.value = 80;
+        volumeValue.textContent = '80%';
+        
+        document.getElementById('natural-pauses').checked = true;
+        document.getElementById('emphasize-important').checked = false;
+        document.getElementById('enhanced-clarity').checked = false;
+        
+        // Reset dropdowns to first option
+        document.getElementById('voice-style').selectedIndex = 0;
+        document.getElementById('audio-format').selectedIndex = 0;
+        document.getElementById('sample-rate').selectedIndex = 0;
+        document.getElementById('silence-padding').selectedIndex = 2; // Default = 1 second
+      });
+      
+      // Preset buttons
+      document.getElementById('presets-default').addEventListener('click', function() {
+        document.getElementById('reset-controls').click();
+      });
+      
+      document.getElementById('presets-audiobook').addEventListener('click', function() {
+        speedSlider.value = 0.9;
+        speedValue.textContent = '0.9x';
+        
+        pitchSlider.value = 1;
+        pitchValue.textContent = 'Medium';
+        
+        volumeSlider.value = 85;
+        volumeValue.textContent = '85%';
+        
+        document.getElementById('natural-pauses').checked = true;
+        document.getElementById('emphasize-important').checked = true;
+        document.getElementById('enhanced-clarity').checked = true;
+        
+        document.getElementById('voice-style').value = 'Narration';
+        document.getElementById('audio-format').value = 'MP3 (Recommended)';
+        document.getElementById('sample-rate').value = '24kHz (High Quality)';
+        document.getElementById('silence-padding').value = '1.5 seconds';
+      });
+      
+      document.getElementById('presets-podcast').addEventListener('click', function() {
+        speedSlider.value = 1.1;
+        speedValue.textContent = '1.1x';
+        
+        pitchSlider.value = 1.1;
+        pitchValue.textContent = 'Medium';
+        
+        volumeSlider.value = 90;
+        volumeValue.textContent = '90%';
+        
+        document.getElementById('natural-pauses').checked = true;
+        document.getElementById('emphasize-important').checked = true;
+        document.getElementById('enhanced-clarity').checked = true;
+        
+        document.getElementById('voice-style').value = 'Conversational';
+        document.getElementById('audio-format').value = 'MP3 (Recommended)';
+        document.getElementById('sample-rate').value = '44.1kHz (Studio Quality)';
+        document.getElementById('silence-padding').value = '1 second (Default)';
+      });
+    });
+  </script>
+</div>
+
+</element><element id="1e419fbc-36b6-41fb-a9d8-3fdf33e82b36" data-section-id="1e419fbc-36b6-41fb-a9d8-3fdf33e82b36">
+
+
+<div id="output-section" class="page-section h-screen p-6 lg:px-8 flex flex-col overflow-y-auto hidden">
+  <div class="mb-6">
+    <h2 class="text-2xl font-bold text-gray-800 dark:text-white font-poppins">Output Controls</h2>
+    <p class="mt-2 text-gray-600 dark:text-gray-300 font-inter">Play, download, and share your synthesized speech.</p>
+  </div>
+
+  <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-6 mb-6">
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-3 md:mb-0">Audio Preview</h3>
+      <div class="flex space-x-2">
+        <button id="btn-regenerate" class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+          Regenerate
+        </button>
+        <button id="btn-download" class="flex items-center px-3 py-2 text-sm text-white bg-blue-600 dark:bg-teal-500 hover:bg-blue-700 dark:hover:bg-teal-600 rounded-lg transition-colors duration-200 font-inter">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          Download MP3
+        </button>
+      </div>
+    </div>
+    
+    <!-- Audio Waveform Visualization -->
+    <div class="mb-6 bg-gray-50 dark:bg-gray-700 rounded-lg p-4 h-32 relative">
+      <div id="waveform-container" class="h-full flex items-center justify-center">
+        <!-- This would typically be replaced with a canvas or actual waveform visualization -->
+        <div class="w-full flex items-center space-x-1">
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-4 animate-pulse"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-6 animate-pulse" style="animation-delay: 0.1s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-8 animate-pulse" style="animation-delay: 0.2s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-12 animate-pulse" style="animation-delay: 0.15s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-16 animate-pulse" style="animation-delay: 0.25s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-10 animate-pulse" style="animation-delay: 0.3s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-20 animate-pulse" style="animation-delay: 0.2s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-8 animate-pulse" style="animation-delay: 0.35s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-12 animate-pulse" style="animation-delay: 0.4s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-6 animate-pulse" style="animation-delay: 0.25s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-14 animate-pulse" style="animation-delay: 0.3s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-16 animate-pulse" style="animation-delay: 0.35s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-6 animate-pulse" style="animation-delay: 0.4s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-10 animate-pulse" style="animation-delay: 0.45s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-12 animate-pulse" style="animation-delay: 0.3s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-18 animate-pulse" style="animation-delay: 0.2s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-8 animate-pulse" style="animation-delay: 0.25s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-12 animate-pulse" style="animation-delay: 0.1s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-6 animate-pulse" style="animation-delay: 0.15s"></div>
+          <div class="bg-blue-500 dark:bg-teal-500 w-1 h-4 animate-pulse" style="animation-delay: 0.2s"></div>
+          <div class="hidden md:block bg-blue-500 dark:bg-teal-500 w-1 h-6 animate-pulse" style="animation-delay: 0.25s"></div>
+          <div class="hidden md:block bg-blue-500 dark:bg-teal-500 w-1 h-10 animate-pulse" style="animation-delay: 0.3s"></div>
+          <div class="hidden md:block bg-blue-500 dark:bg-teal-500 w-1 h-8 animate-pulse" style="animation-delay: 0.35s"></div>
+          <div class="hidden md:block bg-blue-500 dark:bg-teal-500 w-1 h-14 animate-pulse" style="animation-delay: 0.4s"></div>
+          <div class="hidden md:block bg-blue-500 dark:bg-teal-500 w-1 h-10 animate-pulse" style="animation-delay: 0.45s"></div>
+          <div class="hidden md:block bg-blue-500 dark:bg-teal-500 w-1 h-6 animate-pulse" style="animation-delay: 0.5s"></div>
+          <div class="hidden md:block bg-blue-500 dark:bg-teal-500 w-1 h-8 animate-pulse" style="animation-delay: 0.45s"></div>
+          <div class="hidden md:block bg-blue-500 dark:bg-teal-500 w-1 h-12 animate-pulse" style="animation-delay: 0.4s"></div>
+          <div class="hidden md:block bg-blue-500 dark:bg-teal-500 w-1 h-16 animate-pulse" style="animation-delay: 0.35s"></div>
+          <div class="hidden md:block bg-blue-500 dark:bg-teal-500 w-1 h-10 animate-pulse" style="animation-delay: 0.3s"></div>
+          <div class="hidden lg:block bg-blue-500 dark:bg-teal-500 w-1 h-6 animate-pulse" style="animation-delay: 0.25s"></div>
+          <div class="hidden lg:block bg-blue-500 dark:bg-teal-500 w-1 h-4 animate-pulse" style="animation-delay: 0.2s"></div>
+          <div class="hidden lg:block bg-blue-500 dark:bg-teal-500 w-1 h-8 animate-pulse" style="animation-delay: 0.15s"></div>
+          <div class="hidden lg:block bg-blue-500 dark:bg-teal-500 w-1 h-12 animate-pulse" style="animation-delay: 0.1s"></div>
+          <div class="hidden lg:block bg-blue-500 dark:bg-teal-500 w-1 h-6 animate-pulse" style="animation-delay: 0.05s"></div>
+        </div>
+      </div>
+      
+      <!-- Audio Progress Indicator -->
+      <div class="absolute bottom-4 left-4 right-4 flex items-center space-x-2">
+        <span id="current-time" class="text-xs text-gray-500 dark:text-gray-400 font-inter">0:00</span>
+        <div class="flex-1 bg-gray-200 dark:bg-gray-600 h-1 rounded">
+          <div id="progress-bar" class="bg-blue-600 dark:bg-teal-500 h-1 rounded w-0"></div>
+        </div>
+        <span id="total-time" class="text-xs text-gray-500 dark:text-gray-400 font-inter">0:00</span>
+      </div>
+    </div>
+    
+    <!-- Playback Controls -->
+    <div class="flex items-center justify-center space-x-4">
+      <button id="btn-backward" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.333 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z" />
+        </svg>
+      </button>
+      
+      <button id="btn-play" class="p-4 rounded-full bg-blue-600 dark:bg-teal-500 text-white hover:bg-blue-700 dark:hover:bg-teal-600 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </button>
+      
+      <button id="btn-pause" class="hidden p-4 rounded-full bg-blue-600 dark:bg-teal-500 text-white hover:bg-blue-700 dark:hover:bg-teal-600 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </button>
+      
+      <button id="btn-forward" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <!-- Audio File Info -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-4">Audio Information</h3>
+      <div class="space-y-3">
+        <div class="flex justify-between">
+          <span class="text-sm text-gray-500 dark:text-gray-400 font-inter">Voice</span>
+          <span class="text-sm text-gray-800 dark:text-white font-inter">Emma (US)</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-sm text-gray-500 dark:text-gray-400 font-inter">Duration</span>
+          <span class="text-sm text-gray-800 dark:text-white font-inter">0:45</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-sm text-gray-500 dark:text-gray-400 font-inter">Format</span>
+          <span class="text-sm text-gray-800 dark:text-white font-inter">MP3 (128 kbps)</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-sm text-gray-500 dark:text-gray-400 font-inter">File Size</span>
+          <span class="text-sm text-gray-800 dark:text-white font-inter">724 KB</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-sm text-gray-500 dark:text-gray-400 font-inter">Created</span>
+          <span class="text-sm text-gray-800 dark:text-white font-inter">Just now</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Share Options -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-4">Share Options</h3>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <button class="flex items-center px-3 py-2 text-sm rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-200 font-inter">
+          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          Facebook
+        </button>
+        <button class="flex items-center px-3 py-2 text-sm rounded-lg bg-blue-400 text-white hover:bg-blue-500 transition-colors duration-200 font-inter">
+          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.054 10.054 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.667 2.48c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+          </svg>
+          Twitter
+        </button>
+        <button class="flex items-center px-3 py-2 text-sm rounded-lg bg-green-500 text-white hover:bg-green-600 transition-colors duration-200 font-inter">
+          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+          Instagram
+        </button>
+        <button class="flex items-center px-3 py-2 text-sm rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-200 font-inter">
+          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          LinkedIn
+        </button>
+      </div>
+      
+      <div class="mb-4">
+        <label for="share-link" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Direct Link</label>
+        <div class="flex">
+          <input 
+            id="share-link" 
+            type="text" 
+            value="https://voicegen.app/share/a1b2c3d4" 
+            readonly 
+            class="flex-1 px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-l-lg focus:outline-none font-inter"
+          >
+          <button id="btn-copy-link" class="px-3 py-2 bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600 border-l-0 rounded-r-lg hover:bg-gray-200 dark:hover:bg-gray-500 transition-colors duration-200 font-inter">
+            Copy
+          </button>
+        </div>
+      </div>
+      
+      <button class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter w-full justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Email Link
+      </button>
+    </div>
+  </div>
+  
+  <div class="flex justify-between">
+    <button onclick="showSection('tts-controls')" class="px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">
+      Back to TTS Controls
+    </button>
+    <button onclick="showSection('visualization')" class="px-4 py-2 text-white bg-blue-600 dark:bg-teal-500 hover:bg-blue-700 dark:hover:bg-teal-600 rounded-lg transition-colors duration-200 font-inter">
+      Continue to Visualization
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Play/Pause button toggle
+      const playBtn = document.getElementById('btn-play');
+      const pauseBtn = document.getElementById('btn-pause');
+      
+      if (playBtn && pauseBtn) {
+        playBtn.addEventListener('click', function() {
+          playBtn.classList.add('hidden');
+          pauseBtn.classList.remove('hidden');
+          
+          // Simulate audio progress (in a real app, this would be tied to actual audio playback)
+          simulateProgress();
+        });
+        
+        pauseBtn.addEventListener('click', function() {
+          pauseBtn.classList.add('hidden');
+          playBtn.classList.remove('hidden');
+          
+          // Stop progress simulation
+          clearInterval(progressInterval);
+        });
+      }
+      
+      // Copy link button
+      const copyBtn = document.getElementById('btn-copy-link');
+      const shareLink = document.getElementById('share-link');
+      
+      if (copyBtn && shareLink) {
+        copyBtn.addEventListener('click', function() {
+          shareLink.select();
+          document.execCommand('copy');
+          
+          // Change button text temporarily
+          const originalText = copyBtn.textContent;
+          copyBtn.textContent = 'Copied!';
+          
+          setTimeout(function() {
+            copyBtn.textContent = originalText;
+          }, 2000);
+        });
+      }
+      
+      // Progress simulation variables
+      let progressBar = document.getElementById('progress-bar');
+      let currentTime = document.getElementById('current-time');
+      let totalTime = document.getElementById('total-time');
+      let progressValue = 0;
+      let progressInterval;
+      
+      function simulateProgress() {
+        // Reset progress
+        progressValue = 0;
+        progressBar.style.width = '0%';
+        currentTime.textContent = '0:00';
+        totalTime.textContent = '0:45';
+        
+        // Start progress simulation
+        progressInterval = setInterval(function() {
+          progressValue += 1;
+          
+          if (progressValue <= 45) {
+            progressBar.style.width = (progressValue / 45 * 100) + '%';
+            
+            // Update current time
+            const mins = Math.floor(progressValue / 60);
+            const secs = progressValue % 60;
+            currentTime.textContent = mins + ':' + (secs < 10 ? '0' + secs : secs);
+          } else {
+            // End of audio
+            clearInterval(progressInterval);
+            pauseBtn.classList.add('hidden');
+            playBtn.classList.remove('hidden');
+          }
+        }, 1000); // Update every second
+      }
+    });
+  </script>
+</div>
+</element><element id="40c7cf24-4eac-4392-ab2d-3a676d332262" data-section-id="40c7cf24-4eac-4392-ab2d-3a676d332262">
+
+
+<div id="visualization" class="page-section h-screen p-6 lg:px-8 flex flex-col overflow-y-auto hidden">
+  <div class="mb-6">
+    <h2 class="text-2xl font-bold text-gray-800 dark:text-white font-poppins">Visualization</h2>
+    <p class="mt-2 text-gray-600 dark:text-gray-300 font-inter">Interactive audio visualization and real-time feedback.</p>
+  </div>
+
+  <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-6 mb-6">
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-3 md:mb-0">Audio Waveform</h3>
+      <div class="flex space-x-2">
+        <button id="btn-zoom-out" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7" />
+          </svg>
+        </button>
+        <button id="btn-zoom-in" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+          </svg>
+        </button>
+        <button id="btn-reset-view" class="p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Interactive Waveform Visualization -->
+    <div class="relative mb-6">
+      <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 h-64">
+        <!-- Advanced Waveform with Frequency Spectrum -->
+        <div class="h-full flex flex-col">
+          <!-- Waveform Display -->
+          <div class="h-2/3 mb-2 relative">
+            <div class="absolute top-0 left-0 w-full h-full">
+              <!-- Time markers -->
+              <div class="flex justify-between text-xs text-gray-400 absolute -top-4 w-full px-2">
+                <span>0:00</span>
+                <span>0:09</span>
+                <span>0:18</span>
+                <span>0:27</span>
+                <span>0:36</span>
+                <span>0:45</span>
+              </div>
+              
+              <!-- Vertical grid lines -->
+              <div class="absolute top-0 left-1/5 h-full w-px bg-gray-200 dark:bg-gray-600"></div>
+              <div class="absolute top-0 left-2/5 h-full w-px bg-gray-200 dark:bg-gray-600"></div>
+              <div class="absolute top-0 left-3/5 h-full w-px bg-gray-200 dark:bg-gray-600"></div>
+              <div class="absolute top-0 left-4/5 h-full w-px bg-gray-200 dark:bg-gray-600"></div>
+              
+              <!-- Horizontal center line -->
+              <div class="absolute top-1/2 left-0 w-full h-px bg-gray-300 dark:bg-gray-500"></div>
+            </div>
+            
+            <!-- Actual waveform display -->
+            <div class="relative h-full w-full overflow-hidden">
+              <div class="absolute top-0 left-0 w-full h-full flex items-center">
+                <svg viewBox="0 0 1200 200" preserveAspectRatio="none" class="w-full h-full">
+                  <!-- Waveform Path - would be dynamically generated in a real app -->
+                  <path
+                    d="M0,100 Q30,80 60,100 T120,100 T180,100 T240,90 T300,70 T360,50 T420,60 T480,80 T540,90 T600,100 T660,110 T720,120 T780,110 T840,90 T900,70 T960,60 T1020,80 T1080,100 T1140,90 T1200,100"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="text-blue-500 dark:text-teal-400"
+                  />
+                  
+                  <!-- Waveform Fill - would be dynamically generated in a real app -->
+                  <path
+                    d="M0,100 Q30,80 60,100 T120,100 T180,100 T240,90 T300,70 T360,50 T420,60 T480,80 T540,90 T600,100 T660,110 T720,120 T780,110 T840,90 T900,70 T960,60 T1020,80 T1080,100 T1140,90 T1200,100 V200 H0 Z"
+                    fill="currentColor"
+                    fill-opacity="0.2"
+                    class="text-blue-500 dark:text-teal-400"
+                  />
+                </svg>
+                
+                <!-- Playhead indicator -->
+                <div id="waveform-playhead" class="absolute top-0 left-1/3 h-full w-px bg-red-500 z-10">
+                  <div class="w-3 h-3 rounded-full bg-red-500 absolute -top-1.5 -ml-1.5"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Frequency Spectrum Display -->
+          <div class="h-1/3 border-t border-gray-200 dark:border-gray-600 pt-2">
+            <div class="h-full w-full flex items-end justify-between space-x-0.5">
+              <!-- Frequency bars - would be dynamic in a real app -->
+              <div class="w-full h-1/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-2/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-3/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-4/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-full bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-4/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-3/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-2/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-3/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-4/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-full bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-4/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-3/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-1/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-2/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-3/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-4/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-3/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-2/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+              <div class="w-full h-1/5 bg-blue-400 dark:bg-teal-500 rounded-sm"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Waveform Controls -->
+      <div class="flex justify-between items-center mt-4">
+        <button id="btn-play-vis" class="flex items-center px-3 py-2 text-sm bg-blue-600 dark:bg-teal-500 text-white hover:bg-blue-700 dark:hover:bg-teal-600 rounded-lg transition-colors duration-200 font-inter">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Play
+        </button>
+        
+        <div class="flex items-center">
+          <button id="btn-text-sync" class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Text Sync
+          </button>
+          <button id="btn-download-audio" class="flex items-center px-3 py-2 text-sm text-blue-600 dark:text-teal-400 border border-blue-600 dark:border-teal-400 hover:bg-blue-50 dark:hover:bg-teal-900/20 rounded-lg transition-colors duration-200 font-inter">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <!-- Text Synchronization Panel -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-4">Text Synchronization</h3>
+      <div class="h-52 overflow-y-auto bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+        <p class="text-sm text-gray-800 dark:text-white font-inter relative">
+          <span class="bg-blue-100 dark:bg-teal-900/40 px-1 rounded">Welcome to VoiceGen.</span> This is a demonstration of our text-to-speech technology. Our advanced system converts written text into natural-sounding speech with customizable voices, speeds, and tones. The highlighted text shows the current playback position.
+        </p>
+        <p class="text-sm text-gray-800 dark:text-white font-inter mt-3">
+          You can click on any part of the text to jump to that position in the audio. This makes it easy to navigate through longer recordings and find specific sections quickly.
+        </p>
+        <p class="text-sm text-gray-800 dark:text-white font-inter mt-3">
+          Our technology also supports multiple languages and accents, making it perfect for global applications and diverse audiences. Try it today and experience the power of natural-sounding speech generation.
+        </p>
+      </div>
+      <div class="flex items-center mt-4">
+        <input type="checkbox" id="highlight-text" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" checked />
+        <label for="highlight-text" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">Highlight text during playback</label>
+      </div>
+    </div>
+    
+    <!-- Advanced Visualization Options -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-4">Visualization Options</h3>
+      <div class="space-y-4">
+        <div>
+          <label for="vis-type" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Visualization Type</label>
+          <select id="vis-type" class="w-full px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter">
+            <option>Waveform</option>
+            <option>Frequency Spectrum</option>
+            <option>Combined (Both)</option>
+            <option>Circular Visualization</option>
+            <option>Particle Animation</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="color-scheme" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Color Scheme</label>
+          <select id="color-scheme" class="w-full px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter">
+            <option>Default (Blue/Teal)</option>
+            <option>Vibrant</option>
+            <option>Monochrome</option>
+            <option>Warm</option>
+            <option>Cool</option>
+            <option>Custom</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="detail-level" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Detail Level</label>
+          <div class="flex items-center">
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-inter mr-2">Low</span>
+            <input 
+              id="detail-level" 
+              type="range" 
+              min="1" 
+              max="5" 
+              step="1" 
+              value="3" 
+              class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
+            >
+            <span class="text-xs text-gray-500 dark:text-gray-400 font-inter ml-2">High</span>
+          </div>
+        </div>
+        
+        <div class="flex flex-wrap gap-2">
+          <button class="px-2 py-1 text-xs rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors duration-200 font-inter">
+            Standard
+          </button>
+          <button class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 font-inter">
+            High Resolution
+          </button>
+          <button class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 font-inter">
+            Animated
+          </button>
+          <button class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 font-inter">
+            Minimal
+          </button>
+          <button class="px-2 py-1 text-xs rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200 font-inter">
+            Interactive
+          </button>
+        </div>
+        
+        <div class="flex items-center">
+          <input type="checkbox" id="responsive-vis" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" checked />
+          <label for="responsive-vis" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+            Enable responsive animations
+            <span class="block text-xs text-gray-500 dark:text-gray-400">May impact performance on older devices</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex justify-between">
+    <button onclick="showSection('output-section')" class="px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">
+      Back to Output Controls
+    </button>
+    <button onclick="showSection('settings')" class="px-4 py-2 text-white bg-blue-600 dark:bg-teal-500 hover:bg-blue-700 dark:hover:bg-teal-600 rounded-lg transition-colors duration-200 font-inter">
+      Continue to Settings
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Visualization animation demo
+      let animating = false;
+      let playheadPosition = 1/3; // Start position
+      const playhead = document.getElementById('waveform-playhead');
+      
+      document.getElementById('btn-play-vis').addEventListener('click', function() {
+        if (!animating) {
+          animating = true;
+          this.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Pause
+          `;
+          
+          // Animate playhead
+          animatePlayhead();
+        } else {
+          animating = false;
+          this.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Play
+          `;
+        }
+      });
+      
+      function animatePlayhead() {
+        if (!animating) return;
+        
+        // Move playhead
+        playheadPosition += 0.002;
+        if (playheadPosition > 1) {
+          playheadPosition = 0;
+        }
+        
+        if (playhead) {
+          playhead.style.left = (playheadPosition * 100) + '%';
+        }
+        
+        // Simulate changing frequency bars
+        const bars = document.querySelectorAll('.h-1\\/3 .bg-blue-400');
+        bars.forEach(bar => {
+          const randomHeight = Math.random();
+          bar.style.height = (randomHeight * 100) + '%';
+        });
+        
+        requestAnimationFrame(animatePlayhead);
+      }
+      
+      // Zoom controls
+      let zoomLevel = 1;
+      
+      document.getElementById('btn-zoom-in').addEventListener('click', function() {
+        if (zoomLevel < 4) {
+          zoomLevel *= 1.5;
+          updateZoom();
+        }
+      });
+      
+      document.getElementById('btn-zoom-out').addEventListener('click', function() {
+        if (zoomLevel > 0.5) {
+          zoomLevel /= 1.5;
+          updateZoom();
+        }
+      });
+      
+      document.getElementById('btn-reset-view').addEventListener('click', function() {
+        zoomLevel = 1;
+        updateZoom();
+      });
+      
+      function updateZoom() {
+        // This would normally adjust the waveform SVG viewBox or transform
+        console.log('Zoom level: ' + zoomLevel);
+      }
+    });
+  </script>
+</div>
+</element><element id="7f35d889-defa-4fea-9aa8-851f63bcf3ca" data-section-id="7f35d889-defa-4fea-9aa8-851f63bcf3ca">
+
+
+<div id="settings" class="page-section h-screen p-6 lg:px-8 flex flex-col overflow-y-auto hidden">
+  <div class="mb-6">
+    <h2 class="text-2xl font-bold text-gray-800 dark:text-white font-poppins">Settings</h2>
+    <p class="mt-2 text-gray-600 dark:text-gray-300 font-inter">Customize your text-to-speech experience.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+    <!-- Theme & Appearance -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-4">Theme & Appearance</h3>
+      
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2 font-inter">Color Theme</label>
+          <div class="grid grid-cols-3 gap-2">
+            <button class="w-full aspect-square bg-white border border-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-teal-500 transition-colors duration-200 flex items-center justify-center">
+              <span class="w-2/3 h-2/3 bg-blue-600 rounded-md"></span>
+            </button>
+            <button class="w-full aspect-square bg-gray-900 border border-gray-700 rounded-lg hover:border-blue-500 dark:hover:border-teal-500 transition-colors duration-200 flex items-center justify-center">
+              <span class="w-2/3 h-2/3 bg-teal-500 rounded-md"></span>
+            </button>
+            <button class="w-full aspect-square bg-gradient-to-br from-purple-600 to-blue-500 border border-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-teal-500 transition-colors duration-200"></button>
+            <button class="w-full aspect-square bg-gradient-to-br from-red-500 to-yellow-500 border border-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-teal-500 transition-colors duration-200"></button>
+            <button class="w-full aspect-square bg-gradient-to-br from-green-500 to-teal-500 border border-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-teal-500 transition-colors duration-200"></button>
+            <button class="w-full aspect-square bg-gradient-to-br from-pink-500 to-purple-500 border border-gray-300 rounded-lg hover:border-blue-500 dark:hover:border-teal-500 transition-colors duration-200"></button>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-2 font-inter">Display Mode</label>
+          <div class="flex space-x-2">
+            <button class="flex-1 py-2 px-3 text-sm bg-blue-600 dark:bg-teal-500 text-white rounded-lg transition-colors duration-200 font-inter">Auto</button>
+            <button class="flex-1 py-2 px-3 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">Light</button>
+            <button class="flex-1 py-2 px-3 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">Dark</button>
+          </div>
+        </div>
+        
+        <div>
+          <label for="font-size" class="block text-sm text-gray-600 dark:text-gray-400 mb-2 font-inter">Font Size</label>
+          <select id="font-size" class="w-full px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter">
+            <option>Small</option>
+            <option selected>Medium</option>
+            <option>Large</option>
+            <option>Extra Large</option>
+          </select>
+        </div>
+        
+        <div class="flex items-center">
+          <input type="checkbox" id="high-contrast" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" />
+          <label for="high-contrast" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+            High Contrast Mode
+            <span class="block text-xs text-gray-500 dark:text-gray-400">Enhances visibility for visual impairments</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Account -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-4">Account Settings</h3>
+      
+      <div class="flex items-center mb-4">
+        <div class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-full w-full text-gray-400 p-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </div>
+        <div>
+          <p class="text-sm font-medium text-gray-800 dark:text-white font-inter">John Doe</p>
+          <p class="text-xs text-gray-500 dark:text-gray-400 font-inter">john.doe@example.com</p>
+        </div>
+        <button class="ml-auto text-sm text-blue-600 dark:text-teal-400 hover:text-blue-700 dark:hover:text-teal-300 transition-colors duration-200 font-inter">
+          Edit
+        </button>
+      </div>
+      
+      <div class="space-y-4">
+        <div>
+          <label for="language-pref" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Interface Language</label>
+          <select id="language-pref" class="w-full px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter">
+            <option>English (US)</option>
+            <option>Español</option>
+            <option>Français</option>
+            <option>Deutsch</option>
+            <option>日本語</option>
+          </select>
+        </div>
+        
+        <div class="flex items-center">
+          <input type="checkbox" id="email-notifications" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" checked />
+          <label for="email-notifications" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+            Email Notifications
+            <span class="block text-xs text-gray-500 dark:text-gray-400">Receive important updates and tips</span>
+          </label>
+        </div>
+        
+        <div class="flex items-center">
+          <input type="checkbox" id="auto-login" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" checked />
+          <label for="auto-login" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+            Stay Signed In
+            <span class="block text-xs text-gray-500 dark:text-gray-400">Automatically login on this device</span>
+          </label>
+        </div>
+        
+        <button class="w-full px-3 py-2 text-sm text-red-600 dark:text-red-400 border border-red-600 dark:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors duration-200 font-inter mt-4">
+          Sign Out
+        </button>
+      </div>
+    </div>
+    
+    <!-- Privacy & Storage -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-4">Privacy & Storage</h3>
+      
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Data Storage</label>
+          <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-3">
+            <div class="flex justify-between items-center mb-1">
+              <span class="text-xs text-gray-500 dark:text-gray-400 font-inter">Used Space</span>
+              <span class="text-xs font-medium text-gray-700 dark:text-gray-300 font-inter">248 MB / 1 GB</span>
+            </div>
+            <div class="w-full h-2 bg-gray-200 dark:bg-gray-600 rounded-full">
+              <div class="w-1/4 h-2 bg-blue-600 dark:bg-teal-500 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex items-center">
+          <input type="checkbox" id="cloud-sync" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" checked />
+          <label for="cloud-sync" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+            Cloud Synchronization
+            <span class="block text-xs text-gray-500 dark:text-gray-400">Sync settings and voices across devices</span>
+          </label>
+        </div>
+        
+        <div class="flex items-center">
+          <input type="checkbox" id="save-history" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" checked />
+          <label for="save-history" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+            Save Generation History
+            <span class="block text-xs text-gray-500 dark:text-gray-400">Keep record of past text-to-speech conversions</span>
+          </label>
+        </div>
+        
+        <div class="flex items-center">
+          <input type="checkbox" id="usage-data" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" />
+          <label for="usage-data" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+            Share Usage Data
+            <span class="block text-xs text-gray-500 dark:text-gray-400">Help us improve by sharing anonymous usage data</span>
+          </label>
+        </div>
+        
+        <button class="w-full px-3 py-2 text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter mt-2">
+          Clear All Data
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <!-- Application Settings -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-4">Application Settings</h3>
+      
+      <div class="space-y-4">
+        <div>
+          <label for="default-voice" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Default Voice</label>
+          <select id="default-voice" class="w-full px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter">
+            <option>Emma (US) - Female</option>
+            <option>James (UK) - Male</option>
+            <option>Sofia (ES) - Female</option>
+            <option>Alex (US) - Neutral</option>
+            <option>Pierre (FR) - Male</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="default-format" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Default Audio Format</label>
+          <select id="default-format" class="w-full px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter">
+            <option>MP3 (Recommended)</option>
+            <option>WAV (High Quality)</option>
+            <option>M4A</option>
+            <option>FLAC</option>
+            <option>OGG</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="auto-detect-lang" class="block text-sm text-gray-600 dark:text-gray-400 mb-1 font-inter">Language Detection</label>
+          <select id="auto-detect-lang" class="w-full px-3 py-2 text-sm bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:border-blue-500 dark:focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-teal-200 transition-colors duration-200 font-inter">
+            <option>Auto-detect language (Recommended)</option>
+            <option>Always ask</option>
+            <option>Use default language only</option>
+          </select>
+        </div>
+        
+        <div class="flex items-center">
+          <input type="checkbox" id="auto-play" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" checked />
+          <label for="auto-play" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+            Auto-play generated speech
+          </label>
+        </div>
+        
+        <div class="flex items-center">
+          <input type="checkbox" id="save-on-download" class="w-4 h-4 text-blue-600 dark:text-teal-500 bg-gray-100 dark:bg-gray-700 rounded border-gray-300 dark:border-gray-600 focus:ring-blue-500 dark:focus:ring-teal-500" checked />
+          <label for="save-on-download" class="ml-2 text-sm text-gray-600 dark:text-gray-400 font-inter">
+            Save generation in history when downloading
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Help & Support -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg border border-neutral-200/30 dark:border-neutral-700/30 p-4">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-300 font-poppins mb-4">Help & Support</h3>
+      
+      <div class="space-y-3">
+        <a href="#" class="flex items-center py-2 px-3 text-sm bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Frequently Asked Questions
+        </a>
+        
+        <a href="#" class="flex items-center py-2 px-3 text-sm bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Documentation & Tutorials
+        </a>
+        
+        <a href="#" class="flex items-center py-2 px-3 text-sm bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Contact Support
+        </a>
+        
+        <div class="pt-3 mt-3 border-t border-gray-200 dark:border-gray-700">
+          <h4 class="text-xs font-medium text-gray-600 dark:text-gray-400 mb-2 font-poppins">About VoiceGen</h4>
+          <div class="text-xs text-gray-500 dark:text-gray-400 font-inter">
+            <p>Version 1.2.3</p>
+            <p class="mt-1">© 2023 VoiceGen Technologies Inc.</p>
+            <div class="mt-3 flex space-x-3">
+              <a href="#" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200">Privacy Policy</a>
+              <a href="#" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex justify-between">
+    <button onclick="showSection('visualization')" class="px-4 py-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors duration-200 font-inter">
+      Back to Visualization
+    </button>
+    <button id="save-settings" class="px-4 py-2 text-white bg-blue-600 dark:bg-teal-500 hover:bg-blue-700 dark:hover:bg-teal-600 rounded-lg transition-colors duration-200 font-inter">
+      Save Settings
+    </button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Setting save button
+      document.getElementById('save-settings').addEventListener('click', function() {
+        // Simulate saving settings
+        const notification = document.createElement('div');
+        notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-md transition-opacity duration-500';
+        notification.textContent = 'Settings saved successfully!';
+        document.body.appendChild(notification);
+        
+        // Remove notification after 3 seconds
+        setTimeout(function() {
+          notification.style.opacity = '0';
+          setTimeout(function() {
+            document.body.removeChild(notification);
+          }, 500);
+        }, 3000);
+      });
+    });
+  </script>
+</div>
+</element></div>
+      </main>
+
+      <!-- {bodyScripts} -->
+   </body>
+</html>
