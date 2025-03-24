@@ -16,8 +16,10 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import home
+from tts_app import views
 
 urlpatterns = [
-    path('', home, name='home')
+    path('', views.home, name='home'),
+    path('generate/', views.generate_speech, name='generate_speech'),
+    path('clone/', views.generate_clone_speech, name='clone_speech'),
 ]

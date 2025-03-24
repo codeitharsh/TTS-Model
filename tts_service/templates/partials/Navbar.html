@@ -1,0 +1,60 @@
+{% block css %}
+<style>
+  .nav-item { 
+    @apply text-gray-800 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500; 
+  }
+  .btn { 
+    @apply rounded-full bg-black text-white px-4 py-2 hover:bg-gray-900 focus:ring-2 focus:ring-gray-500; 
+  }
+</style>
+{% endblock %}
+
+{% block navbar %}
+<header class="bg-white shadow-sm fixed top-0 w-full z-50">
+  <div class="container mx-auto flex items-center justify-between gap-x-4 px-4 relative min-h-16">
+    
+    <!-- Logo Area -->
+    <div class="flex items-center">
+      <a href="/" class="font-bold text-lg">Logo</a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav id="desktop-nav" class="hidden lg:flex space-x-6">
+      <a href="/docs" class="nav-item">Docs</a>
+      <a href="/pricing" class="nav-item">Pricing</a>
+      <a href="/enterprise" class="nav-item">Enterprise</a>
+    </nav>
+
+    <!-- Right Side (Buttons & Mobile Menu) -->
+    <div class="flex items-center gap-x-4">
+      <a href="/app/sign-in" class="btn hidden lg:inline-flex">Log in</a>
+      <a href="/app/sign-up" class="btn">Try for free</a>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="lg:hidden p-2 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+          <path stroke="currentColor" stroke-width="1.5" d="M2 6h20M2 12h20M2 18h20"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu (Hidden by default) -->
+  <div id="mobile-menu" class="hidden lg:hidden flex flex-col space-y-4 bg-white shadow-md p-4 absolute w-full left-0 top-16 transition-all duration-300">
+    <a href="/docs" class="nav-item">Docs</a>
+    <a href="/pricing" class="nav-item">Pricing</a>
+    <a href="/enterprise" class="nav-item">Enterprise</a>
+    <a href="/app/sign-in" class="btn">Log in</a>
+    <a href="/app/sign-up" class="btn">Try for free</a>
+  </div>
+</header>
+{% endblock %}
+
+{% block script %}
+<script>
+  // Toggle Mobile Menu
+  document.getElementById('mobile-menu-button').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+</script>
+{% endblock %}
