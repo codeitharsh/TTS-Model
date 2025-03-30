@@ -1,0 +1,466 @@
+{% extends "base.html" %} {% block css %}{% endblock %} {% block content %}
+
+<div id="features">
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Powerful Text-to-Speech Features
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Advanced technology that makes your content come alive with
+          natural-sounding voices and customizable options.
+        </p>
+      </div>
+
+
+
+      <!-- Interactive Demo Section -->
+      <div class="mt-20 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl p-8 md:p-12 shadow-md">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              See It In Action
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Try our TTS engine with this interactive demo. Type any text and
+              hear it transformed into natural speech instantly.
+            </p>
+
+            <div class="space-y-6">
+
+
+              <div>
+                <label for="language-selection" class="block text-sm font-medium text-gray-700 mb-2">
+                    Choose a Language
+                </label>
+                <select id="language-selection" class="block w-full rounded-lg border-gray-300 px-4 py-2.5 text-gray-700">
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="es">Spanish</option>
+                    <option value="ja">Japanese</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="voice-selection" class="block text-sm font-medium text-gray-700 mb-2">
+                    Choose a Voice
+                </label>
+                <select id="voice-selection" class="block w-full rounded-lg border-gray-300 px-4 py-2.5 text-gray-700">
+                    <option value="">Select a language first</option>
+                </select>
+            </div>
+            
+            
+
+              <div>
+                <label
+                  for="demo-text"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Enter your text</label
+                >
+                <textarea
+                name="text"
+                  id="demo-text"
+                  rows="3"
+                  class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-white p-4 text-gray-700"
+                  placeholder="Type something here to hear it spoken..."
+                >Welcome to our advanced text-to-speech platform. Transform your content with natural-sounding voices.</textarea>
+              </div>
+
+              <div class="flex space-x-4">
+                <button
+                  class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg px-5 py-2.5 transition-transform duration-300 hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 mr-2"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Generate Speech
+                </button>
+                                <!-- Tell a Story Button -->
+                                <button onclick="fillWithStory()" class="border-2 rounded-lg px-6 py-3 flex items-center space-x-3 w-full md:w-auto justify-center">
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                  </svg>
+                                  <span class="text-base font-medium">TELL A STORY</span>
+                              </button>
+                              <div class="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-4 w-full md:w-auto">
+                                {% if audio_url %}
+                                <audio controls class="h-12 w-full md:w-64 block">
+                                    <source src="{{ audio_url }}" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                {% endif %}
+                                <span class="text-gray-500 text-lg char-count">0/500</span>
+                            </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="relative">
+            <img
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8ZGlzY292ZXIlMjByb2xsb3V0JTJDJTIwdWx0aW1hdGUlMjBsYW5kaW5nJTIwZ2VuZXJhdG9yJTJDJTIwYnVpbGRlci4lMjBjcmVhdGUlMjBzdHVubmluZyUyQyUyMGhpZ2gtcGVyZm9ybWluZyUyMHdlYnNpdGVzJTIwZWFzZSUyMHVzaW5nJTIwdGVjaG5vbG9neS4lMjBmZWF0dXJlcyUyMHNob3djYXNlJTIwZGV0YWlsZWQlMjBkZW1vbnN0cmF0aXZlfGVufDB8MHx8fDE3NDMxOTAwODd8MA&ixlib=rb-4.0.3&q=80&w=1080?q=80"
+              alt="Person using text-to-speech technology on laptop"
+              onerror="this.onerror=null; this.src='https://placehold.co/600x400'"
+              class="rounded-lg shadow-lg object-cover w-full h-full md:h-auto"
+            />
+
+            <!-- Audio Wave Animation Overlay -->
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center">
+              <div
+                class="flex items-end h-12 space-x-1 px-6 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg"
+              >
+                <div
+                  class="w-1 h-3 bg-indigo-400 rounded-full animate-[pulse_1s_ease-in-out_infinite]"
+                ></div>
+                <div
+                  class="w-1 h-6 bg-indigo-500 rounded-full animate-[pulse_1.2s_ease-in-out_infinite]"
+                ></div>
+                <div
+                  class="w-1 h-9 bg-indigo-600 rounded-full animate-[pulse_0.8s_ease-in-out_infinite]"
+                ></div>
+                <div
+                  class="w-1 h-5 bg-indigo-500 rounded-full animate-[pulse_1.1s_ease-in-out_infinite]"
+                ></div>
+                <div
+                  class="w-1 h-7 bg-indigo-600 rounded-full animate-[pulse_0.9s_ease-in-out_infinite]"
+                ></div>
+                <div
+                  class="w-1 h-4 bg-indigo-400 rounded-full animate-[pulse_1.2s_ease-in-out_infinite]"
+                ></div>
+                <div
+                  class="w-1 h-8 bg-indigo-600 rounded-full animate-[pulse_0.8s_ease-in-out_infinite]"
+                ></div>
+                <div
+                  class="w-1 h-4 bg-indigo-500 rounded-full animate-[pulse_1.3s_ease-in-out_infinite]"
+                ></div>
+                <div
+                  class="w-1 h-6 bg-indigo-400 rounded-full animate-[pulse_1s_ease-in-out_infinite]"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% comment %} <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature Card 1 -->
+        <div
+          class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-indigo-100 rounded-lg flex items-center justify-center mb-6 text-indigo-600"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+            500+ Realistic Voices
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Access hundreds of natural-sounding voices across 40+ languages and
+            multiple accents.
+          </p>
+          <ul class="text-gray-600 space-y-2">
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-indigo-500 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Multiple accents per language
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-indigo-500 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Male and female options
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-indigo-500 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Age and personality variations
+            </li>
+          </ul>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div
+          class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-amber-100 rounded-lg flex items-center justify-center mb-6 text-amber-600"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+            Advanced Customization
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Fine-tune voice parameters to match your exact needs with granular
+            control.
+          </p>
+          <ul class="text-gray-600 space-y-2">
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-amber-500 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Adjustable pitch and tone
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-amber-500 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Speed and pause control
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-amber-500 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Emotion and emphasis options
+            </li>
+          </ul>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div
+          class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+        >
+          <div
+            class="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-6 text-emerald-600"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+              />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+            Enterprise-Grade API
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Integrate our powerful TTS service into your applications with
+            simple API calls.
+          </p>
+          <ul class="text-gray-600 space-y-2">
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-emerald-500 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              RESTful endpoints
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-emerald-500 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              99.9% uptime guarantee
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 text-emerald-500 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              SDK for all major platforms
+            </li>
+          </ul>
+        </div>
+      </div> {% endcomment %}
+    </div>
+  </section>
+</div>
+
+{% endblock %} 
+{% block script %}
+<script>
+
+    <!-- Character Counter Script -->
+
+      function fillWithStory() {
+          const textarea = document.querySelector('textarea[name="text"]');
+          const story = "Once upon a time in a distant kingdom, there was a young adventurer named Alex. With a heart full of dreams and a mind set on discovery, Alex embarked on a journey to uncover the secrets of the enchanted forest. As they ventured deeper, they encountered magical creatures, hidden treasures, and an ancient prophecy that would change their life forever...";
+          textarea.value = story;
+          updateCharCount();
+      }
+
+
+      document.querySelector('textarea[name="text"]').addEventListener('input', updateCharCount);
+      const textarea = document.querySelector('textarea[name="text"]');
+      const charCount = document.querySelector('.char-count');
+
+      function updateCharCount() {
+          const count = textarea.value.length;
+          charCount.textContent = `${count}/500`;
+          if (count > 500) {
+              charCount.classList.remove('text-gray-500');
+              charCount.classList.add('text-red-500');
+              textarea.classList.add('border-red-500');
+          } else {
+              charCount.classList.remove('text-red-500');
+              charCount.classList.add('text-gray-500');
+              textarea.classList.remove('border-red-500');
+          }
+      }
+      textarea.addEventListener('input', updateCharCount);
+      updateCharCount();
+
+  </script>
+<script>
+document.getElementById("play-audio-btn").addEventListener("click", async function () {
+  const text = document.getElementById("demo-text").value.trim();
+  const speakerSelect = document.getElementById("voice-selection");
+  const speaker = speakerSelect.value;
+  const language = "en"; // Default to English
+
+  if (!text) {
+      alert("Please enter text to convert.");
+      return;
+  }
+
+  try {
+      const formData = new FormData();
+      formData.append("text", text);
+      formData.append("speaker", speaker);
+      formData.append("language", language);
+
+      const response = await fetch("/tts/", {
+          method: "POST",
+          body: formData
+      });
+
+      const data = await response.json();
+      if (data.audio) {
+          const audioPlayer = document.getElementById("audio-player");
+          audioPlayer.src = data.audio;
+          audioPlayer.classList.remove("hidden");
+          audioPlayer.play();
+      } else {
+          alert("Error generating speech.");
+      }
+  } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to connect to the server.");
+  }
+});
+</script>
+ {% endblock %}

@@ -20,15 +20,17 @@
 
     <!-- Desktop Navigation -->
     <nav id="desktop-nav" class="hidden lg:flex space-x-6">
-      <a href="/docs" class="nav-item">Docs</a>
       <a href="/pricing" class="nav-item">Pricing</a>
-      <a href="/enterprise" class="nav-item">Enterprise</a>
+      <a href="/clone_speech" class="nav-item">Clone Audio</a>
+      <a href="/tts/generate_speech" class="nav-item">Generate Audio</a>
+      <a href="/examples" class="nav-item">Examples</a>
+      <a href="/integrations" class="nav-item">Integrations</a>
+      
     </nav>
 
     <!-- Right Side (Buttons & Mobile Menu) -->
     <div class="flex items-center gap-x-4">
-      <a href="/app/sign-in" class="btn hidden lg:inline-flex">Log in</a>
-      <a href="/app/sign-up" class="btn">Try for free</a>
+      <a href="/sign-in" class="btn hidden lg:inline-flex">Try for free</a>
 
       <!-- Mobile Menu Button -->
       <button id="mobile-menu-button" class="lg:hidden p-2 focus:outline-none">
@@ -41,11 +43,12 @@
 
   <!-- Mobile Menu (Hidden by default) -->
   <div id="mobile-menu" class="hidden lg:hidden flex flex-col space-y-4 bg-white shadow-md p-4 absolute w-full left-0 top-16 transition-all duration-300">
-    <a href="/docs" class="nav-item">Docs</a>
     <a href="/pricing" class="nav-item">Pricing</a>
-    <a href="/enterprise" class="nav-item">Enterprise</a>
-    <a href="/app/sign-in" class="btn">Log in</a>
-    <a href="/app/sign-up" class="btn">Try for free</a>
+    <a href="/clone_speech" class="nav-item">Clone Audio</a>
+    <a href="/tts/generate_speech" class="nav-item">Generate Audio</a>
+    <a href="/examples" class="nav-item">Examples</a>
+    <a href="/sign-in" class="nav-item">Try for free</a>
+    <a href="/integrations" class="nav-item">Integrations</a>
   </div>
 </header>
 {% endblock %}

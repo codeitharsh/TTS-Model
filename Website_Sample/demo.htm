@@ -1,0 +1,352 @@
+<div id="root">
+    <section id="demo" class="py-24 bg-gradient-to-b from-white to-gray-50">
+      <div class="container mx-auto px-4 md:px-8">
+        <div class="text-center mb-16">
+          <span class="inline-block px-3 py-1 text-sm font-medium bg-indigo-100 text-indigo-800 rounded-full mb-3">Interactive Demo</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Experience Our Technology</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Try our Text-to-Speech engine with our easy-to-use demo and hear the quality for yourself.</p>
+        </div>
+  
+        <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            <!-- Demo Preview Image Side -->
+            <div class="relative h-64 lg:h-auto">
+              <img 
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8ZGVtbyUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzQzMTYzMTI2fDA&ixlib=rb-4.0.3&q=80&w=1080?q=80"
+                alt="Person using our TTS service on laptop"
+                onerror="this.onerror=null; this.src='https://placehold.co/600x400'"
+                class="w-full h-full object-cover"
+              >
+              <div class="absolute inset-0 bg-indigo-900 bg-opacity-30 backdrop-filter backdrop-blur-sm flex items-center justify-center">
+                <div class="text-white text-center p-6">
+                  <div class="w-16 h-16 mx-auto bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4 backdrop-filter backdrop-blur-sm border border-white border-opacity-40">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-bold">Now Playing</h3>
+                  <p class="text-sm text-white text-opacity-80 mt-2">James (British Male)</p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Demo Controls Side -->
+            <div class="p-6 md:p-8 lg:p-10">
+              <h3 class="text-xl font-bold text-gray-900 mb-6">Generate Speech</h3>
+              
+              <!-- Voice Selection -->
+              <div class="mb-6">
+                <label for="voice-model" class="block text-sm font-medium text-gray-700 mb-2">Select Voice</label>
+                <div class="relative">
+                  <select id="voice-model" class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-white px-4 py-2.5 text-gray-700 appearance-none">
+                    <option value="james">James (British Male)</option>
+                    <option value="sophia">Sophia (American Female)</option>
+                    <option value="gabriel">Gabriel (French Male)</option>
+                    <option value="emma">Emma (Australian Female)</option>
+                    <option value="takeshi">Takeshi (Japanese Male)</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-700">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Text Input -->
+              <div class="mb-6">
+                <label for="demo-text" class="block text-sm font-medium text-gray-700 mb-2">Enter Text to Convert</label>
+                <textarea 
+                  id="demo-text" 
+                  rows="5" 
+                  class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-white p-4 text-gray-700 transition-all duration-200"
+                  placeholder="Type or paste your text here..."
+                >Welcome to our Text-to-Speech service. This is an example of how our advanced AI technology can convert written text into natural-sounding speech.</textarea>
+              </div>
+              
+              <!-- Advanced Settings Accordion -->
+              <div class="mb-6">
+                <button id="advanced-settings-toggle" class="flex w-full justify-between items-center px-4 py-2 bg-gray-50 hover:bg-gray-100 rounded-lg text-sm font-medium text-gray-700 transition-colors duration-200" aria-expanded="false">
+                  <span>Advanced Settings</span>
+                  <svg id="advanced-chevron" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                
+                <div id="advanced-settings-panel" class="hidden mt-3 p-4 bg-gray-50 rounded-lg">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Speech Rate -->
+                    <div>
+                      <label for="speech-rate" class="block text-xs font-medium text-gray-700 mb-1">Speech Rate</label>
+                      <div class="flex items-center">
+                        <span class="text-xs text-gray-500 mr-2">Slow</span>
+                        <input type="range" id="speech-rate" min="0.5" max="2" step="0.1" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        <span class="text-xs text-gray-500 ml-2">Fast</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Pitch -->
+                    <div>
+                      <label for="pitch" class="block text-xs font-medium text-gray-700 mb-1">Pitch</label>
+                      <div class="flex items-center">
+                        <span class="text-xs text-gray-500 mr-2">Low</span>
+                        <input type="range" id="pitch" min="0.5" max="2" step="0.1" value="1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        <span class="text-xs text-gray-500 ml-2">High</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Clarity -->
+                    <div>
+                      <label for="clarity" class="block text-xs font-medium text-gray-700 mb-1">Clarity</label>
+                      <div class="flex items-center">
+                        <span class="text-xs text-gray-500 mr-2">Natural</span>
+                        <input type="range" id="clarity" min="0" max="1" step="0.1" value="0.5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                        <span class="text-xs text-gray-500 ml-2">Clear</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Style -->
+                    <div>
+                      <label for="speaking-style" class="block text-xs font-medium text-gray-700 mb-1">Speaking Style</label>
+                      <select id="speaking-style" class="block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-white px-2 py-1.5 text-xs text-gray-700 appearance-none">
+                        <option value="neutral">Neutral</option>
+                        <option value="friendly">Friendly</option>
+                        <option value="professional">Professional</option>
+                        <option value="enthusiastic">Enthusiastic</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Audio Player -->
+              <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-xs font-medium text-gray-700">Preview Audio</div>
+                  <div class="text-xs text-gray-500" id="audio-time">0:00 / 0:30</div>
+                </div>
+                
+                <!-- Audio Waveform Visualization -->
+                <div class="relative h-12 mb-2 bg-white rounded-md overflow-hidden">
+                  <div class="absolute inset-0 flex items-center justify-around px-2">
+                    <div class="w-1 h-3 bg-indigo-300 rounded-full"></div>
+                    <div class="w-1 h-5 bg-indigo-400 rounded-full"></div>
+                    <div class="w-1 h-8 bg-indigo-500 rounded-full"></div>
+                    <div class="w-1 h-4 bg-indigo-400 rounded-full"></div>
+                    <div class="w-1 h-6 bg-indigo-500 rounded-full"></div>
+                    <div class="w-1 h-8 bg-indigo-600 rounded-full"></div>
+                    <div class="w-1 h-10 bg-indigo-500 rounded-full"></div>
+                    <div class="w-1 h-6 bg-indigo-400 rounded-full"></div>
+                    <div class="w-1 h-8 bg-indigo-500 rounded-full"></div>
+                    <div class="w-1 h-4 bg-indigo-400 rounded-full"></div>
+                    <div class="w-1 h-2 bg-indigo-300 rounded-full"></div>
+                    <div class="w-1 h-5 bg-indigo-400 rounded-full"></div>
+                    <div class="w-1 h-8 bg-indigo-500 rounded-full"></div>
+                    <div class="w-1 h-4 bg-indigo-400 rounded-full"></div>
+                    <div class="w-1 h-6 bg-indigo-500 rounded-full"></div>
+                    <div class="w-1 h-3 bg-indigo-400 rounded-full"></div>
+                    <div class="w-1 h-5 bg-indigo-500 rounded-full"></div>
+                    <div class="w-1 h-7 bg-indigo-600 rounded-full"></div>
+                    <div class="w-1 h-4 bg-indigo-400 rounded-full"></div>
+                    <div class="w-1 h-2 bg-indigo-300 rounded-full"></div>
+                  </div>
+                  <div class="absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r from-indigo-50 to-transparent"></div>
+                </div>
+                
+                <!-- Audio Controls -->
+                <div class="flex items-center space-x-4">
+                  <button id="play-btn" class="w-8 h-8 rounded-full bg-indigo-600 hover:bg-indigo-700 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                  <button class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                  <button class="text-gray-500 hover:text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z" />
+                      <path d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293-1.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L10.414 13H15v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM15 11h2a1 1 0 110 2h-2v-2z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Action Buttons -->
+              <div class="flex flex-col sm:flex-row gap-3">
+                <button id="generate-btn" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg px-5 py-2.5 transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg flex items-center justify-center">
+                  <span>Generate Audio</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+                <button class="flex-1 sm:flex-initial bg-white hover:bg-gray-50 text-gray-700 font-medium rounded-lg px-5 py-2.5 border border-gray-300 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow">
+                  Copy Link
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Recent Demos -->
+        <div class="mt-16">
+          <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">Recent Demos</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Recent Demo 1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div class="relative h-48">
+                <img 
+                  src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8M3x8ZGVtbyUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzQzMTYzMTI2fDA&ixlib=rb-4.0.3&q=80&w=1080?q=80"
+                  alt="Person working on laptop with audio recording"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x400'"
+                  class="w-full h-full object-cover"
+                >
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-4">
+                  <div class="text-white text-sm font-medium">Audio Book Narration</div>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-xs text-gray-500">Emma (Australian)</div>
+                  <div class="flex items-center">
+                    <div class="h-2 w-2 rounded-full bg-green-500 mr-1"></div>
+                    <span class="text-xs text-gray-500">2:15</span>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                  <div class="h-2 bg-gray-200 rounded-full flex-1">
+                    <div class="h-2 w-3/4 bg-indigo-500 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Recent Demo 2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div class="relative h-48">
+                <img 
+                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8MXx8ZGVtbyUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzQzMTYzMTI2fDA&ixlib=rb-4.0.3&q=80&w=1080?q=80"
+                  alt="Professional setup for audio recording"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x400'"
+                  class="w-full h-full object-cover"
+                >
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-4">
+                  <div class="text-white text-sm font-medium">Product Announcement</div>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-xs text-gray-500">Gabriel (French)</div>
+                  <div class="flex items-center">
+                    <div class="h-2 w-2 rounded-full bg-green-500 mr-1"></div>
+                    <span class="text-xs text-gray-500">1:30</span>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                  <div class="h-2 bg-gray-200 rounded-full flex-1">
+                    <div class="h-2 w-1/2 bg-indigo-500 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Recent Demo 3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div class="relative h-48">
+                <img 
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8ZGVtbyUyMHByb2Zlc3Npb25hbHxlbnwwfDB8fHwxNzQzMTYzMTI2fDA&ixlib=rb-4.0.3&q=80&w=1080?q=80"
+                  alt="Person using our TTS system on laptop"
+                  onerror="this.onerror=null; this.src='https://placehold.co/600x400'"
+                  class="w-full h-full object-cover"
+                >
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-4">
+                  <div class="text-white text-sm font-medium">Tutorial Video</div>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-xs text-gray-500">Takeshi (Japanese)</div>
+                  <div class="flex items-center">
+                    <div class="h-2 w-2 rounded-full bg-green-500 mr-1"></div>
+                    <span class="text-xs text-gray-500">3:45</span>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <button class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                  <div class="h-2 bg-gray-200 rounded-full flex-1">
+                    <div class="h-2 w-5/6 bg-indigo-500 rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-12 text-center">
+          <a href="#pricing" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg px-8 py-3 transition-transform duration-300 hover:scale-105 shadow-md hover:shadow-lg">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Advanced Settings Toggle
+        const advancedToggle = document.getElementById('advanced-settings-toggle');
+        const advancedPanel = document.getElementById('advanced-settings-panel');
+        const advancedChevron = document.getElementById('advanced-chevron');
+        
+        advancedToggle.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+          advancedPanel.classList.toggle('hidden');
+          advancedChevron.classList.toggle('rotate-180');
+        });
+        
+        // Generate Button Click - Add loading state
+        const generateBtn = document.getElementById('generate-btn');
+        generateBtn.addEventListener('click', function() {
+          this.innerHTML = '<svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Generating...';
+          this.disabled = true;
+          
+          // Simulate generation delay
+          setTimeout(() => {
+            this.innerHTML = '<span>Generate Audio</span><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" /></svg>';
+            this.disabled = false;
+            
+            // Show success message
+            const demoSection = document.getElementById('demo');
+            const successMessage = document.createElement('div');
+            successMessage.className = 'fixed top-4 right-4 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded shadow-md transform transition-transform duration-500 ease-in-out';
+            successMessage.innerHTML = '<div class="flex items-center"><svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><p>Audio generated successfully!</p></div>';
+            document.body.appendChild(successMessage);
+            
+            setTimeout(() => {
+              successMessage.classList.add('translate-x-full', 'opacity-0');
+              setTimeout(() => {
+                document.body.removeChild(successMessage);
+              }, 500);
+            }, 3000);
+          }, 2000);
+        });
+      });
+    </script>
+  </div>

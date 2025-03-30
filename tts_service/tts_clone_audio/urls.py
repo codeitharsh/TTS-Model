@@ -14,15 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path,include
-from django.conf import settings
-from django.conf.urls.static import static
+
+from django.urls import path
+from tts_clone_audio import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('tts_app.urls')),
-    path('tts', include('tts_generate_audio.urls')),
-    path('clone_speech', include('tts_clone_audio.urls')),
+    path('', views.clone_speech, name='clone_speech'),
+
 ]
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

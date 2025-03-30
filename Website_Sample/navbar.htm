@@ -1,0 +1,81 @@
+<div id="root">
+    <header id="header" class="bg-white shadow-sm sticky top-0 z-50">
+      <nav class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a href="#hero" class="font-bold text-2xl text-primary-600 font-sora">
+              <span class="text-indigo-600">Voice</span>
+              <span class="text-amber-500">Craft</span>
+            </a>
+          </div>
+  
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex space-x-8">
+            <a href="#hero" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 hover:underline underline-offset-4">Home</a>
+            <a href="#features" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 hover:underline underline-offset-4">Features</a>
+            <a href="#demo" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 hover:underline underline-offset-4">Demo</a>
+            <a href="#pricing" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 hover:underline underline-offset-4">Pricing</a>
+            <a href="#voice-showcase" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 hover:underline underline-offset-4">Voices</a>
+            <a href="#integrations" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 hover:underline underline-offset-4">Integrations</a>
+            <a href="#faq" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 hover:underline underline-offset-4">FAQ</a>
+          </div>
+  
+          <!-- Login Button -->
+          <div class="hidden md:block">
+            <a href="/login" class="bg-indigo-600 hover:bg-indigo-700 text-white font-inter font-medium px-5 py-2 rounded-lg transition duration-300 flex items-center">
+              <span>Login</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+  
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <button id="mobile-menu-button" class="text-neutral-700 hover:text-indigo-600 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2">
+          <div class="flex flex-col space-y-3 pt-2 border-t border-neutral-200">
+            <a href="#hero" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 py-2">Home</a>
+            <a href="#features" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 py-2">Features</a>
+            <a href="#demo" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 py-2">Demo</a>
+            <a href="#pricing" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 py-2">Pricing</a>
+            <a href="#voice-showcase" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 py-2">Voices</a>
+            <a href="#integrations" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 py-2">Integrations</a>
+            <a href="#faq" class="font-inter text-neutral-700 hover:text-indigo-600 transition duration-200 py-2">FAQ</a>
+            <a href="/login" class="font-inter bg-indigo-600 text-white font-medium px-4 py-2 rounded-lg flex justify-center">Login</a>
+          </div>
+        </div>
+      </nav>
+  
+      <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+          const mobileMenu = document.getElementById('mobile-menu');
+          const mobileMenuButton = document.getElementById('mobile-menu-button');
+          const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          
+          mobileMenu.classList.toggle('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+          
+          // Change icon to X when menu is open
+          if (!isExpanded) {
+            mobileMenuButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>`;
+          } else {
+            mobileMenuButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>`;
+          }
+        });
+      </script>
+    </header>
+  </div>

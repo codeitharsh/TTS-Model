@@ -10,10 +10,11 @@
 </head>
 <body>
     {% include "partials/Navbar.html" %}
-    {% block navbar %}
-    {% endblock %}
+    {% comment %} {% block navbar %}
+    {% endblock %} {% endcomment %}
     {% block content %}
     {% endblock %}
+    {% include "partials/footer.html" %}
 </body>
 {% block script %}
 

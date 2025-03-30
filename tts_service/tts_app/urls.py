@@ -20,6 +20,10 @@ from tts_app import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('generate/', views.generate_speech, name='generate_speech'),
-    path('clone/', views.generate_clone_speech, name='clone_speech'),
+    path('sign-in', views.sign_in, name='sign_in'),
+    path('pricing', views.pricing, name='pricing'),
+    path('integrations', views.integrations, name='integrations'),
+    path('examples', views.examples, name='examples'),
+    path("api/speakers/", views.get_speakers, name="get_speakers"),
+    path("api/audio/<str:filename>/", views.get_audio, name="get_audio"),
 ]

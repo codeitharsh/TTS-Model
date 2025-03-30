@@ -1,0 +1,347 @@
+<div id="root">
+    <section id="faq" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Find answers to common questions about our TTS service and features.
+          </p>
+        </div>
+  
+        <div class="flex flex-col lg:flex-row gap-8 mb-16">
+          <!-- FAQ Categories Sidebar -->
+          <div class="lg:w-1/4">
+            <div class="sticky top-24">
+              <h3 class="text-xl font-bold text-gray-900 mb-4">Categories</h3>
+              <div class="space-y-2">
+                <button class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg text-left font-medium transition duration-300">
+                  Getting Started
+                </button>
+                <button class="w-full py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-left font-medium transition duration-300">
+                  Voice Features
+                </button>
+                <button class="w-full py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-left font-medium transition duration-300">
+                  API & Integrations
+                </button>
+                <button class="w-full py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-left font-medium transition duration-300">
+                  Billing & Pricing
+                </button>
+                <button class="w-full py-2 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-left font-medium transition duration-300">
+                  Account & Security
+                </button>
+              </div>
+  
+              <div class="mt-8 bg-blue-50 p-6 rounded-xl">
+                <h4 class="font-bold text-gray-900 mb-2">Need more help?</h4>
+                <p class="text-gray-600 mb-4">Can't find what you're looking for? Our support team is ready to assist.</p>
+                <a href="#contact" class="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300">
+                  Contact Support
+                </a>
+              </div>
+            </div>
+          </div>
+  
+          <!-- FAQ Accordion -->
+          <div class="lg:w-3/4">
+            <div class="space-y-4">
+              <!-- FAQ Item 1 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="w-full px-6 py-4 text-left bg-white flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                  <span class="font-bold text-gray-900">What voices are available in your TTS service?</span>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="px-6 py-4 bg-gray-50 hidden">
+                  <p class="text-gray-700">
+                    We offer over 100+ voices across 25+ languages. Our collection includes professional narrators, conversational assistants, character voices, and regional accents. All voices are studio-quality and regularly updated with new additions each month.
+                  </p>
+                  <div class="mt-4 flex space-x-2">
+                    <a href="#voice-showcase" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                      Browse voice catalog
+                      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- FAQ Item 2 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="w-full px-6 py-4 text-left bg-white flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                  <span class="font-bold text-gray-900">How realistic are your TTS voices?</span>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="px-6 py-4 bg-gray-50 hidden">
+                  <p class="text-gray-700">
+                    Our voices are powered by state-of-the-art neural TTS technology, achieving human-like quality with natural intonation, emphasis, and emotion. Many users can't distinguish our AI voices from professional human voice actors in blind tests.
+                  </p>
+                  <div class="mt-4 flex space-x-2">
+                    <a href="#samples" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                      Listen to samples
+                      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- FAQ Item 3 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="w-full px-6 py-4 text-left bg-white flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                  <span class="font-bold text-gray-900">What file formats do you support?</span>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="px-6 py-4 bg-gray-50 hidden">
+                  <p class="text-gray-700">
+                    We support MP3, WAV, OGG, and FLAC file formats for all generated audio. You can choose your preferred format and quality settings during generation. For voice cloning, we accept MP3, WAV, and FLAC input files.
+                  </p>
+                </div>
+              </div>
+  
+              <!-- FAQ Item 4 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="w-full px-6 py-4 text-left bg-white flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                  <span class="font-bold text-gray-900">How does voice customization work?</span>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="px-6 py-4 bg-gray-50 hidden">
+                  <p class="text-gray-700">
+                    Our customization tools allow you to adjust pitch, speed, tone, emphasis, and pauses. Professional and Enterprise plans include advanced voice style controls, emotion settings, and voice cloning capabilities to create your own custom voice.
+                  </p>
+                  <div class="mt-4 flex space-x-2">
+                    <a href="#customization" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                      Try voice customization
+                      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- FAQ Item 5 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="w-full px-6 py-4 text-left bg-white flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                  <span class="font-bold text-gray-900">What is your pricing model?</span>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="px-6 py-4 bg-gray-50 hidden">
+                  <p class="text-gray-700">
+                    We offer subscription-based pricing tiers (Starter, Professional, and Enterprise) with monthly character allowances. You only pay for what you use, with the option to purchase additional character credits if you exceed your monthly limit.
+                  </p>
+                  <div class="mt-4 flex space-x-2">
+                    <a href="#pricing" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                      View pricing details
+                      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- FAQ Item 6 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="w-full px-6 py-4 text-left bg-white flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                  <span class="font-bold text-gray-900">Can I use your voices commercially?</span>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="px-6 py-4 bg-gray-50 hidden">
+                  <p class="text-gray-700">
+                    Yes, all paid plans include commercial usage rights for generated audio. The Starter plan includes basic commercial rights, while Professional and Enterprise plans offer expanded rights for advertising, broadcasting, and high-volume applications.
+                  </p>
+                  <div class="mt-4 flex space-x-2">
+                    <a href="#terms" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                      View terms of service
+                      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- FAQ Item 7 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="w-full px-6 py-4 text-left bg-white flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                  <span class="font-bold text-gray-900">How does the API integration work?</span>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="px-6 py-4 bg-gray-50 hidden">
+                  <p class="text-gray-700">
+                    Our REST API offers easy integration with your applications. You'll receive unique API keys to authenticate requests, and we provide comprehensive documentation, SDKs for popular languages, and code examples to get you started quickly.
+                  </p>
+                  <div class="mt-4 flex space-x-2">
+                    <a href="#docs" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                      View API documentation
+                      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- FAQ Item 8 -->
+              <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <button class="w-full px-6 py-4 text-left bg-white flex justify-between items-center focus:outline-none" onclick="toggleFAQ(this)">
+                  <span class="font-bold text-gray-900">Is my data secure and private?</span>
+                  <svg class="w-5 h-5 text-gray-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </button>
+                <div class="px-6 py-4 bg-gray-50 hidden">
+                  <p class="text-gray-700">
+                    Yes, we take data security seriously. All data is encrypted in transit and at rest, and we maintain SOC 2 compliance. Your content is never used to train our models without explicit consent, and Enterprise plans include custom data retention policies.
+                  </p>
+                  <div class="mt-4 flex space-x-2">
+                    <a href="#privacy" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                      View privacy policy
+                      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- More Questions -->
+            <div class="mt-8 text-center">
+              <p class="text-gray-600 mb-4">Still have questions? We're here to help.</p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition duration-300 flex items-center justify-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                  </svg>
+                  Chat with Support
+                </a>
+                <a href="#docs" class="px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition duration-300 flex items-center justify-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                  </svg>
+                  Browse Documentation
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Quick Help Section -->
+        <div class="bg-gray-50 rounded-2xl p-10">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Help Card 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Knowledge Base</h3>
+              <p class="text-gray-600 mb-4">
+                Explore our comprehensive guides, tutorials and best practices for using our TTS service.
+              </p>
+              <a href="#docs" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                Browse articles
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+            </div>
+  
+            <!-- Help Card 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Live Support</h3>
+              <p class="text-gray-600 mb-4">
+                Chat with our support team for immediate assistance with any questions or issues.
+              </p>
+              <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                Start a chat
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+            </div>
+  
+            <!-- Help Card 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Video Tutorials</h3>
+              <p class="text-gray-600 mb-4">
+                Watch step-by-step video guides on how to make the most of our TTS platform.
+              </p>
+              <a href="#tutorials" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center">
+                Watch tutorials
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Testimonial Section -->
+        <div class="mt-20">
+          <div class="flex flex-col md:flex-row items-center bg-white rounded-2xl shadow-md overflow-hidden">
+            <div class="md:w-1/3 h-80 relative">
+              <img 
+                src="https://images.unsplash.com/photo-1484981138541-3d074aa97716?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2MzQ2fDB8MXxzZWFyY2h8Mnx8ZmFxJTIwcHJvZmVzc2lvbmFsfGVufDB8MHx8fDE3NDMxNjAzNTJ8MA&ixlib=rb-4.0.3&q=80&w=1080?q=80"
+                alt="Professional woman with coffee mug representing customer success story"
+                onerror="this.onerror=null; this.src='https://placehold.co/' + this.width + 'x' + this.height"
+                class="absolute inset-0 w-full h-full object-cover"
+              >
+            </div>
+            <div class="md:w-2/3 p-8 md:p-12">
+              <svg class="h-10 w-10 text-blue-600 mb-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+              <p class="text-gray-700 text-lg mb-6">
+                "The customer support team was incredibly helpful when I needed to customize voices for our audiobook project. They responded quickly and even provided custom solutions for our specific requirements."
+              </p>
+              <div>
+                <h4 class="font-bold text-gray-900">Rebecca Chen</h4>
+                <p class="text-gray-600">Production Director, AudioBooks Plus</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <script>
+      function toggleFAQ(element) {
+        // Toggle the arrow icon rotation
+        const arrow = element.querySelector('svg');
+        arrow.classList.toggle('rotate-180');
+        
+        // Toggle the content visibility
+        const content = element.nextElementSibling;
+        content.classList.toggle('hidden');
+      }
+    </script>
+  </div>

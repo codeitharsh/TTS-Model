@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tts_app',
+    'tts_clone_audio',
+    'tts_generate_audio',
 ]
 
 MIDDLEWARE = [
